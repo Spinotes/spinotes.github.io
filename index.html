@@ -35,6 +35,7 @@
       </a>
       <nav class="site-nav" aria-label="Navigation principale">
         <a href="#app">SpiNotes, c'est quoi ?</a>
+        <a href="#apercu">Aperçu</a>
         <a href="#avantages">Avantages</a>
         <a href="#offre">Tarif</a>
         <a href="#faq">FAQ</a>
@@ -75,6 +76,85 @@
           <p>Vous prenez une note, SpiNotes la classe à sa place. Plus de dossiers à créer, plus de tri le dimanche soir, plus de notes perdues au fond d'un tiroir numérique.</p>
           <p>Le temps que vous passiez à organiser, vous le passez à autre chose : avancer sur un projet, réviser, ou simplement souffler.</p>
         </div>
+      </div>
+    </section>
+
+    <section class="section" id="apercu">
+      <div class="wrap">
+        <h2>SpiNotes en images</h2>
+        <p class="section-lead">Une app qu'on a envie d'ouvrir : claire le jour, sombre le soir, et assez riche pour tout garder au même endroit.</p>
+
+        <div class="shots" data-shots>
+          <div class="shots-tabs" role="tablist" aria-label="Fonctions de SpiNotes">
+            <button type="button" role="tab" id="tab-notes" aria-controls="panel-notes" aria-selected="true" data-track="apercu_onglet">Notes</button>
+            <button type="button" role="tab" id="tab-mindnote" aria-controls="panel-mindnote" aria-selected="false" tabindex="-1" data-track="apercu_onglet">Cartes mentales</button>
+            <button type="button" role="tab" id="tab-bases" aria-controls="panel-bases" aria-selected="false" tabindex="-1" data-track="apercu_onglet">Bases de données</button>
+            <button type="button" role="tab" id="tab-carte" aria-controls="panel-carte" aria-selected="false" tabindex="-1" data-track="apercu_onglet">Carte des notes</button>
+            <button type="button" role="tab" id="tab-cosmos" aria-controls="panel-cosmos" aria-selected="false" tabindex="-1" data-track="apercu_onglet">Cosmos</button>
+            <button type="button" role="tab" id="tab-sombre" aria-controls="panel-sombre" aria-selected="false" tabindex="-1" data-track="apercu_onglet">Mode sombre</button>
+          </div>
+
+          <div class="shot-panel" role="tabpanel" id="panel-notes" aria-labelledby="tab-notes">
+            <div class="shot-text">
+              <h3>Écrivez, reliez, retrouvez</h3>
+              <p>Une note peut en citer une autre d'un simple geste, et le lien reste cliquable. Cases à cocher, citations, encadrés, et même des bases de données posées directement dans la page : tout ce qui concerne un projet vit au même endroit.</p>
+            </div>
+            <figure class="shot-frame"><img src="img/app/note.webp" width="2880" height="1800" alt="Une note SpiNotes : titre, encadré, liste à cocher, liens vers d'autres notes et tableau des actions du projet" decoding="async"></figure>
+          </div>
+
+          <div class="shot-panel" role="tabpanel" id="panel-mindnote" aria-labelledby="tab-mindnote" hidden>
+            <div class="shot-text">
+              <h3>Des cartes mentales qui deviennent des notes</h3>
+              <p>Posez vos idées en vrac : le plan s'écrit à gauche pendant que la carte se dessine à droite. Une idée mérite plus de place ? Elle devient une note.</p>
+            </div>
+            <figure class="shot-frame"><img src="img/app/mindnote.webp" width="2880" height="1800" alt="Une carte mentale SpiNotes sur le lancement d'une boutique, avec le plan des idées à gauche" loading="lazy" decoding="async"></figure>
+          </div>
+
+          <div class="shot-panel" role="tabpanel" id="panel-bases" aria-labelledby="tab-bases" hidden>
+            <div class="shot-text">
+              <h3>Une base, quatre façons de la regarder</h3>
+              <p>Projets, rendez-vous, actions : tout est relié, et les totaux se calculent seuls (actions ouvertes, prochaine échéance…). Affichez la même base en kanban, en tableau, en calendrier ou en galerie.</p>
+              <div class="view-switch" role="group" aria-label="Choisir une vue">
+                <button type="button" class="is-on" data-view="actions" aria-pressed="true" data-track="apercu_onglet">Kanban</button>
+                <button type="button" data-view="projets" aria-pressed="false" data-track="apercu_onglet">Tableau</button>
+                <button type="button" data-view="calendrier" aria-pressed="false" data-track="apercu_onglet">Calendrier</button>
+                <button type="button" data-view="galerie" aria-pressed="false" data-track="apercu_onglet">Galerie</button>
+              </div>
+            </div>
+            <figure class="shot-frame">
+              <img data-view-img="actions" src="img/app/actions.webp" width="2880" height="1800" alt="Les actions d'un espace SpiNotes en kanban : à faire, en cours, bloqué, terminé" loading="lazy" decoding="async">
+              <img data-view-img="projets" hidden src="img/app/projets.webp" width="2880" height="1800" alt="Les projets d'un espace SpiNotes en tableau, avec statut, domaine, budget et actions ouvertes" loading="lazy" decoding="async">
+              <img data-view-img="calendrier" hidden src="img/app/calendrier.webp" width="2880" height="1800" alt="Le calendrier du mois dans SpiNotes, avec rendez-vous, actions et ressources" loading="lazy" decoding="async">
+              <img data-view-img="galerie" hidden src="img/app/galerie.webp" width="2880" height="1800" alt="Les ressources d'un espace SpiNotes en galerie de cartes" loading="lazy" decoding="async">
+            </figure>
+          </div>
+
+          <div class="shot-panel" role="tabpanel" id="panel-carte" aria-labelledby="tab-carte" hidden>
+            <div class="shot-text">
+              <h3>Toutes vos notes sur une seule carte</h3>
+              <p>Chaque note, chaque personne et chaque lien apparaît sur la carte, et les couleurs rassemblent les thèmes. On voit d'un coup d'œil ce qui est relié à quoi, sans avoir rien classé à la main.</p>
+            </div>
+            <figure class="shot-frame"><img src="img/app/carte.webp" width="2880" height="1800" alt="La carte des notes de SpiNotes : des points colorés par thème, reliés entre eux" loading="lazy" decoding="async"></figure>
+          </div>
+
+          <div class="shot-panel" role="tabpanel" id="panel-cosmos" aria-labelledby="tab-cosmos" hidden>
+            <div class="shot-text">
+              <h3>Et si votre espace devenait un système solaire ?</h3>
+              <p>En 3D, vos bases deviennent des planètes et vos notes des astres en orbite. Une autre façon, plus inattendue, de parcourir ses idées.</p>
+            </div>
+            <figure class="shot-frame"><img src="img/app/cosmos.webp" width="2880" height="1800" alt="La vue Cosmos de SpiNotes : un système solaire en 3D qui représente l'espace de notes" loading="lazy" decoding="async"></figure>
+          </div>
+
+          <div class="shot-panel" role="tabpanel" id="panel-sombre" aria-labelledby="tab-sombre" hidden>
+            <div class="shot-text">
+              <h3>Clair ou sombre, selon vos soirées</h3>
+              <p>La même interface, avec le même confort de lecture, qu'il soit midi ou minuit.</p>
+            </div>
+            <figure class="shot-frame"><img src="img/app/sombre.webp" width="2880" height="1800" alt="Une note SpiNotes en thème sombre" loading="lazy" decoding="async"></figure>
+          </div>
+        </div>
+
+        <p class="shots-note">Captures d'écran réalisées avec des données d'exemple. L'application peut encore évoluer d'ici sa sortie. Sur mobile, faites glisser l'image pour voir le détail.</p>
       </div>
     </section>
 

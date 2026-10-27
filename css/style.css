@@ -757,6 +757,132 @@ fieldset.field {
   margin: 12px 0 0;
 }
 
+/* Aperçu de l'application */
+
+.section-lead {
+  max-width: 62ch;
+  margin: -4px 0 28px;
+  color: var(--muted);
+  font-size: 1.125rem;
+}
+
+.shots-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 2px 0 14px;
+  scrollbar-width: none;
+}
+
+.shots-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.shots-tabs button,
+.view-switch button {
+  flex: none;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--muted);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.shots-tabs button:hover,
+.view-switch button:hover {
+  border-color: var(--green-dim);
+  color: var(--text);
+}
+
+.shots-tabs button[aria-selected="true"] {
+  border-color: var(--green);
+  background: var(--green);
+  color: var(--bg);
+}
+
+.shot-panel {
+  display: grid;
+  gap: 20px;
+  margin-top: 8px;
+}
+
+.shot-panel[hidden] {
+  display: none;
+}
+
+.shot-text {
+  max-width: 64ch;
+}
+
+.shot-text h3 {
+  margin-bottom: 0.45em;
+  font-size: 1.5rem;
+}
+
+.shot-text p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.view-switch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.view-switch button {
+  min-height: 40px;
+  padding: 0 16px;
+  background: transparent;
+}
+
+.view-switch button.is-on {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.shot-frame {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius-m);
+  background: #fff;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+}
+
+.shot-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.shot-frame img[hidden] {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .shot-frame {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .shot-frame img {
+    width: 920px;
+    max-width: none;
+  }
+}
+
+.shots-note {
+  margin: 28px 0 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
 /* Contact */
 
 .contact-card {

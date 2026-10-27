@@ -32,6 +32,44 @@
     timer = setInterval(tick, 1000);
   }
 
+  // Aperçu de l'application : onglets (clavier compris) et choix de la vue de la base de données
+  var shots = document.querySelector("[data-shots]");
+  if (shots) {
+    var tabs = [].slice.call(shots.querySelectorAll('[role="tab"]'));
+    var select = function (tab, focus) {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute("aria-selected", on ? "true" : "false");
+        t.setAttribute("tabindex", on ? "0" : "-1");
+        var panel = document.getElementById(t.getAttribute("aria-controls"));
+        if (panel) panel.hidden = !on;
+      });
+      if (focus) tab.focus();
+      if (tab.scrollIntoView) tab.scrollIntoView({ block: "nearest", inline: "nearest" });
+    };
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener("click", function () { select(tab, false); });
+      tab.addEventListener("keydown", function (e) {
+        var n = e.key === "ArrowRight" ? i + 1 : e.key === "ArrowLeft" ? i - 1 : e.key === "Home" ? 0 : e.key === "End" ? tabs.length - 1 : null;
+        if (n === null) return;
+        e.preventDefault();
+        select(tabs[(n + tabs.length) % tabs.length], true);
+      });
+    });
+    var views = [].slice.call(shots.querySelectorAll("[data-view]"));
+    var viewImgs = [].slice.call(shots.querySelectorAll("[data-view-img]"));
+    views.forEach(function (b) {
+      b.addEventListener("click", function () {
+        views.forEach(function (o) {
+          var on = o === b;
+          o.classList.toggle("is-on", on);
+          o.setAttribute("aria-pressed", on ? "true" : "false");
+        });
+        viewImgs.forEach(function (img) { img.hidden = img.getAttribute("data-view-img") !== b.getAttribute("data-view"); });
+      });
+    });
+  }
+
   // Formulaire de précommande
   var form = document.getElementById("preorder-form");
   if (!form) return;
