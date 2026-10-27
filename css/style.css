@@ -688,6 +688,29 @@ fieldset.field {
   margin: 12px 0 0;
 }
 
+/* Contact */
+
+.contact-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  padding: 28px 24px;
+}
+
+.contact-label {
+  color: var(--muted);
+  font-size: 0.9375rem;
+  margin-bottom: 6px;
+}
+
+.contact-mail {
+  display: inline-block;
+  font-family: var(--font-title);
+  font-size: clamp(1.25rem, 4vw, 1.75rem);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
 /* Pied de page */
 
 .site-footer {
