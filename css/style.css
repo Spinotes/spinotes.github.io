@@ -215,9 +215,10 @@ p {
   gap: 10px;
 }
 
-.brand svg {
-  width: 28px;
-  height: 28px;
+.brand img {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
 }
 
 .header-cta {
