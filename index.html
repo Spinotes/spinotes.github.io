@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SpiNotes | Précommande à 4,99 €</title>
+  <meta name="description" content="SpiNotes sort le 1er janvier 2027. Précommandez gratuitement aujourd'hui et bloquez le tarif de 4,99 €, réservé aux précommandes.">
+  <link rel="canonical" href="https://spinotes.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="SpiNotes | Précommande à 4,99 €">
+  <meta property="og:description" content="Sortie le 1er janvier 2027. Tarif de 4,99 € réservé aux précommandes.">
+  <meta property="og:url" content="https://spinotes.github.io/">
+  <meta property="og:image" content="https://spinotes.github.io/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0c0f0d">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="preload" href="fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./" aria-label="SpiNotes, accueil">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M9 6h10l5 5v15H9z" fill="#39ff88"/><path d="M19 6v5h5z" fill="#2bc46a"/><path d="M12.5 16h7M12.5 20h5" stroke="#0c0f0d" stroke-width="2" stroke-linecap="round"/></svg>
+        SpiNotes
+      </a>
+      <a class="header-cta" href="#precommande">Précommander</a>
+    </div>
+  </header>
+
+  <main id="contenu">
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">Sortie le 1er janvier 2027</p>
+        <h1>Spi<span>Notes</span></h1>
+        <!-- A COMPLETER : phrase d'accroche qui dit en une ligne à quoi sert l'app -->
+        <p class="hero-lead">L'app de notes signée Spin arrive bientôt. Réservez-la dès maintenant.</p>
+
+        <div class="price-line">
+          <span class="price">4,99 €</span>
+          <p class="price-note">Tarif réservé aux précommandes
+            <small>Rien à payer aujourd'hui. Inscription gratuite et sans engagement.</small>
+          </p>
+        </div>
+
+        <a class="btn" href="#precommande">Je précommande SpiNotes</a>
+
+        <div class="countdown" id="countdown" data-target="2027-01-01T00:00:00+01:00">
+          <p class="countdown-label">Lancement dans</p>
+          <div class="countdown-grid" aria-live="off">
+            <div class="countdown-unit"><strong data-unit="days">--</strong><span>jours</span></div>
+            <div class="countdown-unit"><strong data-unit="hours">--</strong><span>heures</span></div>
+            <div class="countdown-unit"><strong data-unit="minutes">--</strong><span>minutes</span></div>
+            <div class="countdown-unit"><strong data-unit="seconds">--</strong><span>secondes</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="app">
+      <div class="wrap split">
+        <div>
+          <h2>À quoi sert SpiNotes</h2>
+        </div>
+        <div>
+          <!-- A COMPLETER : description de l'app (fonctions principales, pour qui, ce qui la rend différente) -->
+          <p class="todo">Description de l'application à compléter.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="offre">
+      <div class="wrap split">
+        <div>
+          <h2>Comment marche la précommande</h2>
+          <p style="color:var(--muted)">Le tarif de 4,99 € est valable uniquement pour les personnes inscrites avant la sortie.</p>
+        </div>
+        <ol class="steps">
+          <li>
+            <strong>Vous remplissez le formulaire</strong>
+            <p>Deux minutes, aucune carte bancaire demandée.</p>
+          </li>
+          <li>
+            <strong>Vous recevez un email de confirmation</strong>
+            <p>Il confirme que votre précommande est bien enregistrée et que le tarif de 4,99 € vous est réservé.</p>
+          </li>
+          <li>
+            <strong>Le 1er janvier 2027, on vous prévient</strong>
+            <p>Un second email vous donne le lien pour télécharger SpiNotes au tarif précommande.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="precommande">
+      <div class="wrap split">
+        <div>
+          <h2>Précommander SpiNotes</h2>
+          <p style="color:var(--muted)">Tous les champs sont obligatoires. Vos données servent uniquement à gérer votre précommande et à vous prévenir de la sortie.</p>
+        </div>
+
+        <div class="form-card">
+          <!-- data-endpoint : URL qui reçoit le formulaire (POST JSON). Vide tant que le service d'inscription n'est pas branché. -->
+          <form id="preorder-form" data-endpoint="" method="post" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="prenom">Prénom</label>
+                <input type="text" id="prenom" name="prenom" autocomplete="given-name" maxlength="60" required>
+                <p class="error" id="prenom-error"></p>
+              </div>
+              <div class="field">
+                <label for="nom">Nom</label>
+                <input type="text" id="nom" name="nom" autocomplete="family-name" maxlength="60" required>
+                <p class="error" id="nom-error"></p>
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" autocomplete="email" maxlength="254" required>
+                <p class="error" id="email-error"></p>
+              </div>
+              <div class="field">
+                <label for="telephone">Téléphone</label>
+                <input type="tel" id="telephone" name="telephone" autocomplete="tel" maxlength="20" placeholder="06 12 34 56 78" required>
+                <p class="error" id="telephone-error"></p>
+              </div>
+              <div class="field full">
+                <label for="naissance">Date de naissance</label>
+                <input type="date" id="naissance" name="naissance" autocomplete="bday" required>
+                <p class="hint">La précommande est ouverte à partir de 15 ans.</p>
+                <p class="error" id="naissance-error"></p>
+              </div>
+
+              <fieldset class="field full">
+                <legend>Vous utiliserez SpiNotes pour</legend>
+                <div class="choices">
+                  <label class="choice"><input type="radio" name="situation" value="etudiant" required><span>Mes études</span></label>
+                  <label class="choice"><input type="radio" name="situation" value="perso"><span>Usage personnel</span></label>
+                  <label class="choice"><input type="radio" name="situation" value="pro"><span>Usage professionnel</span></label>
+                </div>
+                <p class="error" id="situation-error"></p>
+              </fieldset>
+
+              <div class="field full" id="entreprise-field" hidden>
+                <label for="entreprise">Nom de l'entreprise</label>
+                <input type="text" id="entreprise" name="entreprise" autocomplete="organization" maxlength="100">
+                <p class="error" id="entreprise-error"></p>
+              </div>
+
+              <div class="hp" aria-hidden="true">
+                <label for="site_web">Ne pas remplir</label>
+                <input type="text" id="site_web" name="site_web" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="field full">
+                <label class="consent">
+                  <input type="checkbox" id="consentement" name="consentement" value="oui" required>
+                  <span>J'accepte que Spin utilise ces informations pour gérer ma précommande et me prévenir de la sortie de SpiNotes. Je peux me désinscrire à tout moment. Voir la <a href="confidentialite">politique de confidentialité</a> et les <a href="cgv">conditions de précommande</a>.</span>
+                </label>
+                <p class="error" id="consentement-error"></p>
+              </div>
+
+              <div class="form-actions full">
+                <button class="btn" type="submit" id="submit-btn">Valider ma précommande</button>
+                <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="wrap split">
+        <div>
+          <h2>Questions fréquentes</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Est-ce que je paie quelque chose aujourd'hui ?</summary>
+            <p>Non. La précommande est gratuite et sans engagement. Vous payez 4,99 € seulement si vous décidez de télécharger SpiNotes à sa sortie.</p>
+          </details>
+          <details>
+            <summary>Le tarif de 4,99 € est-il garanti ?</summary>
+            <p>Oui, pour toutes les personnes inscrites avant le lancement. Ce tarif ne sera plus proposé ensuite.</p>
+          </details>
+          <details>
+            <summary>Quand vais-je recevoir l'application ?</summary>
+            <p>La sortie est prévue le 1er janvier 2027. Vous recevrez un email ce jour-là avec le lien de téléchargement.</p>
+          </details>
+          <details>
+            <summary>Je n'ai pas reçu l'email de confirmation.</summary>
+            <p>Regardez dans vos courriers indésirables. Si rien n'est arrivé après quelques minutes, écrivez-nous à <a href="mailto:spinotes-general@proton.me">spinotes-general@proton.me</a>.</p>
+          </details>
+          <details>
+            <summary>Comment annuler ma précommande ?</summary>
+            <p>Cliquez sur le lien de désinscription en bas de nos emails, ou écrivez-nous. Vos données sont alors supprimées.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <p>© 2026 Spin. SpiNotes.</p>
+      <ul class="footer-links">
+        <li><a href="mentions-legales">Mentions légales</a></li>
+        <li><a href="cgv">CGV</a></li>
+        <li><a href="cgu">CGU</a></li>
+        <li><a href="confidentialite">Confidentialité</a></li>
+        <li><a href="mailto:spinotes-general@proton.me">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
