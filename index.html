@@ -14,6 +14,7 @@
   <meta property="og:url" content="https://spinotes.github.io/">
   <meta property="og:image" content="https://spinotes.github.io/og.png">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="stats-endpoint" content="https://spinotes-precommande.spinotes-precommande.workers.dev/collect">
   <meta name="theme-color" content="#0c0f0d">
   <link rel="icon" href="favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -21,6 +22,7 @@
   <link rel="preload" href="fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
+  <script src="js/stats.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#contenu">Aller au contenu</a>
@@ -38,7 +40,7 @@
         <a href="#faq">FAQ</a>
         <a href="#contact">Contactez-nous</a>
       </nav>
-      <a class="header-cta" href="#precommande">Précommander</a>
+      <a class="header-cta" href="#precommande" data-track="cta_header">Précommander</a>
     </div>
   </header>
 
@@ -59,7 +61,7 @@
           </div>
         </div>
 
-        <a class="btn" href="#precommande">Je précommande SpiNotes</a>
+        <a class="btn" href="#precommande" data-track="cta_hero">Je précommande SpiNotes</a>
       </div>
     </section>
 

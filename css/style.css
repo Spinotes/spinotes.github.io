@@ -780,6 +780,22 @@ fieldset.field {
   overflow-wrap: anywhere;
 }
 
+.link-btn {
+  min-height: 44px;
+  padding: 0 20px;
+  border: 1px solid var(--green-dim);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--green);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.link-btn:hover {
+  background: rgba(57, 255, 136, 0.12);
+}
+
 /* Pied de page */
 
 .site-footer {

@@ -7,9 +7,11 @@
   <title>Politique de confidentialité | SpiNotes</title>
   <meta name="description" content="Quelles données SpiNotes collecte lors d'une précommande, pourquoi, combien de temps, et comment exercer vos droits.">
   <link rel="canonical" href="https://spinotes.github.io/confidentialite">
+  <meta name="stats-endpoint" content="https://spinotes-precommande.spinotes-precommande.workers.dev/collect">
   <meta name="theme-color" content="#0c0f0d">
   <link rel="icon" href="favicon.png" type="image/png">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/stats.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -85,7 +87,13 @@
       <p>Le site ne dépose aucun cookie.</p>
 
       <h2>Mesure d'audience</h2>
-      <p>Le site n'utilise aucun outil de mesure d'audience.</p>
+      <p>Nous mesurons l'audience du site avec un outil conçu par nos soins, sans cookie ni identifiant. Son seul but est de savoir combien de personnes visitent le site, quelles parties sont lues et quels boutons sont utilisés, afin de l'améliorer.</p>
+      <p>Pour chaque visite, nous enregistrons : la page consultée, le temps passé dessus, la profondeur de défilement, les parties de la page affichées, les boutons et liens utilisés, le site d'où vous arrivez (par exemple un moteur de recherche), le type d'appareil (mobile, tablette ou ordinateur), la langue du navigateur et le pays.</p>
+      <p>Nous n'enregistrons ni votre adresse IP, ni votre identité, ni ce que vous saisissez dans le formulaire. Aucun identifiant n'est conservé sur votre appareil : une visite est repérée par un code aléatoire qui disparaît quand vous quittez la page, ce qui nous empêche de vous reconnaître d'une visite à l'autre. Ces données ne sont pas croisées avec celles de votre précommande et ne sont transmises à aucun tiers, hors les prestataires techniques cités plus haut (Cloudflare pour la transmission, Google pour le tableau de bord interne).</p>
+      <p>Base légale : l'intérêt légitime de Spin à améliorer son site. Les données de visite sont supprimées automatiquement au bout de 13 mois.</p>
+      <p><strong>Vous pouvez refuser cette mesure</strong>, à tout moment et sans conséquence sur votre visite : le bouton ci-dessous mémorise votre refus sur cet appareil (c'est le seul réglage enregistré, et uniquement si vous le choisissez). La mesure est aussi coupée automatiquement si votre navigateur envoie le signal « Ne pas me suivre » ou « Global Privacy Control ».</p>
+      <p><button type="button" class="link-btn" id="stats-toggle">Refuser la mesure d'audience</button></p>
+      <p class="hint" id="stats-toggle-state" role="status"></p>
     </article>
   </main>
 

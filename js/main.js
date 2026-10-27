@@ -116,6 +116,7 @@
     var errors = validate(data);
     var names = Object.keys(errors);
     if (names.length) {
+      document.dispatchEvent(new CustomEvent("spinotes:event", { detail: "form_error" }));
       names.forEach(function (n) { setError(n, errors[n]); });
       var first = form.elements[names[0]];
       if (first && first.focus) first.focus();
