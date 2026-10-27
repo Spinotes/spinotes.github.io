@@ -3,21 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Mentions légales | SpiNotes</title>
   <meta name="description" content="Mentions légales du site SpiNotes : éditeur, hébergeur, propriété intellectuelle et contact.">
   <link rel="canonical" href="https://spinotes.github.io/mentions-legales">
   <meta name="stats-endpoint" content="https://spinotes-precommande.spinotes-precommande.workers.dev/collect">
+  <script src="js/boot.js"></script>
   <meta name="theme-color" content="#0c0f0d">
   <link rel="icon" href="favicon.png" type="image/png">
   <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
   <script src="js/stats.js" defer></script>
 </head>
 <body>
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="./"><img src="logo.png" alt="" width="32" height="32"> SpiNotes</a>
-      <nav class="site-nav" aria-label="Navigation principale">
+      <nav class="site-nav" id="menu-principal" aria-label="Navigation principale">
         <a href="./#app">SpiNotes, c'est quoi ?</a>
         <a href="./#apercu">Aperçu</a>
         <a href="./#avantages">Avantages</a>
@@ -26,6 +28,7 @@
         <a href="./#contact">Contactez-nous</a>
       </nav>
       <a class="header-cta" href="./#precommande">Précommander</a>
+      <button type="button" class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-principal"><span></span></button>
     </div>
   </header>
 

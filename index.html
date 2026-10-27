@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://spinotes-precommande.spinotes-precommande.workers.dev; form-action 'self'; base-uri 'self'; object-src 'none'">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>SpiNotes | Ne rangez plus vos notes</title>
   <meta name="description" content="SpiNotes range vos notes à votre place. Achat unique sans abonnement, IA française en local. Sortie le 4 janvier 2027 : précommandez gratuitement au tarif de 6,99 €.">
   <link rel="canonical" href="https://spinotes.github.io/">
@@ -15,6 +15,7 @@
   <meta property="og:image" content="https://spinotes.github.io/og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="stats-endpoint" content="https://spinotes-precommande.spinotes-precommande.workers.dev/collect">
+  <script src="js/boot.js"></script>
   <meta name="theme-color" content="#0c0f0d">
   <link rel="icon" href="favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -33,7 +34,7 @@
         <img src="logo.png" alt="" width="32" height="32">
         SpiNotes
       </a>
-      <nav class="site-nav" aria-label="Navigation principale">
+      <nav class="site-nav" id="menu-principal" aria-label="Navigation principale">
         <a href="#app">SpiNotes, c'est quoi ?</a>
         <a href="#apercu">Aperçu</a>
         <a href="#avantages">Avantages</a>
@@ -42,6 +43,7 @@
         <a href="#contact">Contactez-nous</a>
       </nav>
       <a class="header-cta" href="#precommande" data-track="cta_header">Précommander</a>
+      <button type="button" class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-principal"><span></span></button>
     </div>
   </header>
 
@@ -86,6 +88,7 @@
 
         <div class="shots" data-shots>
           <div class="shots-tabs" role="tablist" aria-label="Fonctions de SpiNotes">
+            <span class="tab-pill" aria-hidden="true"></span>
             <button type="button" role="tab" id="tab-notes" aria-controls="panel-notes" aria-selected="true" data-track="apercu_onglet">Notes</button>
             <button type="button" role="tab" id="tab-mindnote" aria-controls="panel-mindnote" aria-selected="false" tabindex="-1" data-track="apercu_onglet">Cartes mentales</button>
             <button type="button" role="tab" id="tab-bases" aria-controls="panel-bases" aria-selected="false" tabindex="-1" data-track="apercu_onglet">Bases de données</button>
@@ -121,11 +124,11 @@
                 <button type="button" data-view="galerie" aria-pressed="false" data-track="apercu_onglet">Galerie</button>
               </div>
             </div>
-            <figure class="shot-frame">
-              <img data-view-img="actions" src="img/app/actions.webp" width="2880" height="1800" alt="Les actions d'un espace SpiNotes en kanban : à faire, en cours, bloqué, terminé" loading="lazy" decoding="async">
-              <img data-view-img="projets" hidden src="img/app/projets.webp" width="2880" height="1800" alt="Les projets d'un espace SpiNotes en tableau, avec statut, domaine, budget et actions ouvertes" loading="lazy" decoding="async">
-              <img data-view-img="calendrier" hidden src="img/app/calendrier.webp" width="2880" height="1800" alt="Le calendrier du mois dans SpiNotes, avec rendez-vous, actions et ressources" loading="lazy" decoding="async">
-              <img data-view-img="galerie" hidden src="img/app/galerie.webp" width="2880" height="1800" alt="Les ressources d'un espace SpiNotes en galerie de cartes" loading="lazy" decoding="async">
+            <figure class="shot-frame shot-stack">
+              <img data-view-img="actions" class="is-on" src="img/app/actions.webp" width="2880" height="1800" alt="Les actions d'un espace SpiNotes en kanban : à faire, en cours, bloqué, terminé" loading="lazy" decoding="async">
+              <img data-view-img="projets" src="img/app/projets.webp" width="2880" height="1800" alt="Les projets d'un espace SpiNotes en tableau, avec statut, domaine, budget et actions ouvertes" loading="lazy" decoding="async">
+              <img data-view-img="calendrier" src="img/app/calendrier.webp" width="2880" height="1800" alt="Le calendrier du mois dans SpiNotes, avec rendez-vous, actions et ressources" loading="lazy" decoding="async">
+              <img data-view-img="galerie" src="img/app/galerie.webp" width="2880" height="1800" alt="Les ressources d'un espace SpiNotes en galerie de cartes" loading="lazy" decoding="async">
             </figure>
           </div>
 
