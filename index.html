@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action 'self'; base-uri 'self'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://spinotes-precommande.spinotes-precommande.workers.dev; form-action 'self'; base-uri 'self'; object-src 'none'">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SpiNotes | Ne rangez plus vos notes</title>
   <meta name="description" content="SpiNotes range vos notes à votre place. Achat unique sans abonnement, IA française en local. Sortie le 4 janvier 2027 : précommandez gratuitement au tarif de 6,99 €.">
@@ -136,8 +136,8 @@
         </div>
 
         <div class="form-card">
-          <!-- data-endpoint : URL qui reçoit le formulaire (POST JSON). Vide tant que le service d'inscription n'est pas branché. -->
-          <form id="preorder-form" data-endpoint="" method="post" novalidate>
+          <!-- data-endpoint : Worker Cloudflare qui reçoit le formulaire (POST JSON). Doit aussi figurer dans connect-src de la politique de sécurité en tête de page. -->
+          <form id="preorder-form" data-endpoint="https://spinotes-precommande.spinotes-precommande.workers.dev" method="post" novalidate>
             <div class="form-grid">
               <div class="field">
                 <label for="prenom">Prénom</label>
