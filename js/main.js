@@ -124,7 +124,7 @@
     }
 
     if (!endpoint) {
-      statusEl.textContent = "Les précommandes ne sont pas encore ouvertes. Écrivez-nous à spinotes-general@proton.me.";
+      statusEl.textContent = "Les précommandes ne sont pas encore ouvertes. Écrivez-nous à spinotes.general@gmail.com.";
       statusEl.classList.add("is-error");
       return;
     }
