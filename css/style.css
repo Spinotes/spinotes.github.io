@@ -191,7 +191,36 @@ p {
 /* Hero */
 
 .hero {
-  padding: 64px 0 72px;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding: 64px 0 80px;
+}
+
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+.hero::before {
+  width: 520px;
+  height: 520px;
+  top: 90px;
+  left: -120px;
+  background: radial-gradient(circle, rgba(57, 255, 136, 0.42), transparent 68%);
+}
+
+.hero::after {
+  width: 460px;
+  height: 460px;
+  top: 220px;
+  right: -140px;
+  background: radial-gradient(circle, rgba(43, 196, 106, 0.3), transparent 68%);
 }
 
 @media (min-width: 900px) {
@@ -223,8 +252,8 @@ p {
 .hero-lead {
   font-size: clamp(1.125rem, 2.4vw, 1.375rem);
   color: var(--muted);
-  max-width: 34ch;
-  margin-bottom: 32px;
+  max-width: 36ch;
+  margin-bottom: 36px;
 }
 
 .price-line {
@@ -232,7 +261,7 @@ p {
   flex-wrap: wrap;
   align-items: baseline;
   gap: 8px 16px;
-  margin-bottom: 32px;
+  margin: 8px 0 20px;
 }
 
 .price {
@@ -255,12 +284,10 @@ p {
   font-size: 0.9375rem;
 }
 
-/* Compte à rebours */
+/* Compte à rebours : pilules de verre */
 
 .countdown {
-  margin-top: 56px;
-  padding-top: 28px;
-  border-top: 1px solid var(--line);
+  margin: 0 0 36px;
 }
 
 .countdown-label {
@@ -272,16 +299,32 @@ p {
 .countdown-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 8px;
-  max-width: 560px;
+  gap: 10px;
+  max-width: 580px;
 }
 
 .countdown-unit {
-  background: var(--surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-s);
-  padding: 14px 8px 10px;
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  padding: 18px 4px 14px;
   text-align: center;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+@supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .countdown-unit {
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    backdrop-filter: blur(18px) saturate(160%);
+  }
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .countdown-unit {
+    background: var(--surface-2);
+  }
 }
 
 .countdown-unit strong {
@@ -296,7 +339,7 @@ p {
 
 .countdown-unit span {
   font-size: 0.8125rem;
-  color: var(--muted);
+  color: rgba(237, 242, 238, 0.72);
 }
 
 .countdown-done {
@@ -322,6 +365,77 @@ p {
     grid-template-columns: 5fr 7fr;
     gap: 64px;
   }
+}
+
+.lead-accent {
+  font-family: var(--font-title);
+  font-size: clamp(1.5rem, 3.4vw, 2rem);
+  font-weight: 700;
+  color: var(--green);
+  line-height: 1.15;
+}
+
+.prose-block p {
+  font-size: 1.1875rem;
+  color: #cfd8d2;
+}
+
+.cards {
+  display: grid;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card-featured {
+    grid-column: 1 / -1;
+  }
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-m);
+  padding: 28px 24px;
+}
+
+.card h3 {
+  font-size: 1.375rem;
+  margin: 16px 0 10px;
+}
+
+.card p {
+  color: var(--muted);
+  margin: 0;
+}
+
+.card-featured {
+  background: linear-gradient(140deg, rgba(57, 255, 136, 0.12), var(--surface) 55%);
+  border-color: var(--green-dim);
+}
+
+.card-featured h3 {
+  font-size: clamp(1.5rem, 3vw, 1.875rem);
+}
+
+.card-featured p {
+  color: #cfd8d2;
+  max-width: 62ch;
+}
+
+.pill {
+  display: inline-block;
+  padding: 4px 14px;
+  border: 1px solid var(--green-dim);
+  border-radius: 999px;
+  color: var(--green);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
 }
 
 .todo {
