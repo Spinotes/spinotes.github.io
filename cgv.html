@@ -9,16 +9,18 @@
   <link rel="canonical" href="https://spinotes.github.io/cgv">
   <meta name="stats-endpoint" content="https://spinotes-precommande.spinotes-precommande.workers.dev/collect">
   <script src="js/boot.js"></script>
-  <meta name="theme-color" content="#0c0f0d">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f1fb">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b0813">
   <link rel="icon" href="favicon.png" type="image/png">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
   <script src="js/stats.js" defer></script>
 </head>
 <body>
+  <div class="gas" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div>
   <header class="site-header">
     <div class="wrap">
-      <a class="brand" href="./"><img src="logo.png" alt="" width="32" height="32"> SpiNotes</a>
+      <a class="brand" href="./"><img src="logo.png" alt="" width="32" height="32"><span class="name">Spi<span>Notes</span></span></a>
       <nav class="site-nav" id="menu-principal" aria-label="Navigation principale">
         <a href="./#app">SpiNotes, c'est quoi ?</a>
         <a href="./#apercu">Aperçu</a>
@@ -26,8 +28,10 @@
         <a href="./#offre">Tarif</a>
         <a href="./#faq">FAQ</a>
         <a href="./#contact">Contactez-nous</a>
+        <a class="nav-cta" href="./#precommande">Précommander</a>
       </nav>
       <a class="header-cta" href="./#precommande">Précommander</a>
+      <button type="button" class="theme-toggle" aria-label="Passer en mode nuit" title="Mode nuit"><svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg><svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg></button>
       <button type="button" class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu-principal"><span></span></button>
     </div>
   </header>

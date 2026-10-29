@@ -12,21 +12,109 @@
   font-display: swap;
 }
 
+/* Mode jour par défaut ; le mode nuit suit le réglage de l'appareil tant que la personne n'a pas choisi
+   (boot.js pose data-theme="light" ou "dark" avant le premier affichage). */
 :root {
-  --green: #39ff88;
-  --green-dim: #2bc46a;
-  --bg: #0c0f0d;
-  --surface: #141a16;
-  --surface-2: #1b231e;
-  --line: #2a352e;
-  --text: #edf2ee;
-  --muted: #9aa59e;
-  --danger: #ff6b6b;
+  color-scheme: light;
+  --bg: #f5f1fb;
+  --surface-solid: #ffffff;
+  --line: rgba(88, 52, 160, 0.16);
+  --text: #15101f;
+  --text-soft: #3b3252;
+  --muted: #4a4160;
+  --accent: #7c3aed;
+  --accent-rgb: 124 58 237;
+  --accent-dim: rgba(124, 58, 237, 0.5);
+  --accent-text: #6d28d9;
+  --on-accent: #ffffff;
+  --title-spi: #0a0612;
+  --title-notes: #7c3aed;
+  --danger: #c62d3a;
+  --glass-bg: linear-gradient(150deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.44));
+  --glass-border: rgba(124, 58, 237, 0.2);
+  --glass-hi: rgba(255, 255, 255, 0.95);
+  --glass-shadow: 0 10px 30px rgba(76, 44, 140, 0.14);
+  --header-bg: rgba(245, 241, 251, 0.9);
+  --header-glass: rgba(245, 241, 251, 0.6);
+  --nav-bg: rgba(245, 241, 251, 0.94);
+  --hover: rgba(124, 58, 237, 0.09);
+  --chip-bg: rgba(255, 255, 255, 0.6);
+  --field-bg: rgba(255, 255, 255, 0.82);
+  --sheen: rgba(255, 255, 255, 0.75);
+  --shot-border: rgba(124, 58, 237, 0.2);
+  --shot-shadow: 0 30px 70px rgba(76, 44, 140, 0.28);
+  --logo-bg: #ffffff;
+  --gas-k: 0.55;
   --radius-s: 6px;
   --radius-m: 14px;
   --font-title: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
   --font-body: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
   --wrap: 1080px;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0b0813;
+  --surface-solid: #17121f;
+  --line: rgba(255, 255, 255, 0.12);
+  --text: #f3effb;
+  --text-soft: #d3cce6;
+  --muted: #a9a1c0;
+  --accent-rgb: 139 92 246;
+  --accent-dim: rgba(167, 139, 250, 0.5);
+  --accent-text: #b9a0ff;
+  --title-spi: #ffffff;
+  --title-notes: #a78bfa;
+  --danger: #ff7b86;
+  --glass-bg: linear-gradient(150deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.04));
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --glass-hi: rgba(255, 255, 255, 0.26);
+  --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  --header-bg: rgba(11, 8, 19, 0.9);
+  --header-glass: rgba(11, 8, 19, 0.55);
+  --nav-bg: rgba(11, 8, 19, 0.92);
+  --hover: rgba(255, 255, 255, 0.08);
+  --chip-bg: rgba(255, 255, 255, 0.05);
+  --field-bg: rgba(255, 255, 255, 0.05);
+  --sheen: rgba(255, 255, 255, 0.2);
+  --shot-border: rgba(255, 255, 255, 0.14);
+  --shot-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+  --logo-bg: #f1edf8;
+  --gas-k: 1;
+}
+
+/* Sans JavaScript : on suit simplement le réglage de l'appareil. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+    --bg: #0b0813;
+    --surface-solid: #17121f;
+    --line: rgba(255, 255, 255, 0.12);
+    --text: #f3effb;
+    --text-soft: #d3cce6;
+    --muted: #a9a1c0;
+    --accent-rgb: 139 92 246;
+    --accent-dim: rgba(167, 139, 250, 0.5);
+    --accent-text: #b9a0ff;
+    --title-spi: #ffffff;
+    --title-notes: #a78bfa;
+    --danger: #ff7b86;
+    --glass-bg: linear-gradient(150deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.04));
+    --glass-border: rgba(255, 255, 255, 0.18);
+    --glass-hi: rgba(255, 255, 255, 0.26);
+    --glass-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    --header-bg: rgba(11, 8, 19, 0.9);
+    --header-glass: rgba(11, 8, 19, 0.55);
+    --nav-bg: rgba(11, 8, 19, 0.92);
+    --hover: rgba(255, 255, 255, 0.08);
+    --chip-bg: rgba(255, 255, 255, 0.05);
+    --field-bg: rgba(255, 255, 255, 0.05);
+    --sheen: rgba(255, 255, 255, 0.2);
+    --shot-border: rgba(255, 255, 255, 0.14);
+    --shot-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+    --logo-bg: #f1edf8;
+    --gas-k: 1;
+  }
 }
 
 *,
@@ -61,7 +149,7 @@ img {
 }
 
 a {
-  color: var(--green);
+  color: var(--accent-text);
   text-underline-offset: 3px;
 }
 
@@ -70,7 +158,7 @@ a:hover {
 }
 
 :focus-visible {
-  outline: 2px solid var(--green);
+  outline: 2px solid var(--accent-text);
   outline-offset: 3px;
 }
 
@@ -116,8 +204,8 @@ p {
 .skip:focus {
   left: 16px;
   top: 16px;
-  background: var(--green);
-  color: var(--bg);
+  background: var(--accent);
+  color: var(--on-accent);
   padding: 8px 12px;
   z-index: 10;
 }
@@ -129,14 +217,14 @@ p {
   top: 0;
   z-index: 20;
   border-bottom: 1px solid var(--line);
-  background: rgba(12, 15, 13, 0.88);
+  background: var(--header-bg);
 }
 
 @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .site-header {
-    background: rgba(12, 15, 13, 0.7);
-    -webkit-backdrop-filter: blur(14px);
-    backdrop-filter: blur(14px);
+    background: var(--header-glass);
+    -webkit-backdrop-filter: blur(16px) saturate(150%);
+    backdrop-filter: blur(16px) saturate(150%);
   }
 }
 
@@ -163,7 +251,7 @@ p {
   display: none;
 }
 
-@media (max-width: 899px) {
+@media (max-width: 1039px) {
   .site-nav {
     -webkit-mask-image: linear-gradient(90deg, #000 88%, transparent);
     mask-image: linear-gradient(90deg, #000 88%, transparent);
@@ -183,10 +271,10 @@ p {
 
 .site-nav a:hover {
   color: var(--text);
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--hover);
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1040px) {
   .site-header .wrap {
     flex-wrap: nowrap;
   }
@@ -238,8 +326,8 @@ p {
   padding: 0 28px;
   border: 0;
   border-radius: var(--radius-s);
-  background: var(--green);
-  color: var(--bg);
+  background: var(--accent);
+  color: var(--on-accent);
   font-family: var(--font-body);
   font-size: 1.0625rem;
   font-weight: 700;
@@ -266,32 +354,6 @@ p {
   padding: 64px 0 80px;
 }
 
-.hero::before,
-.hero::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  border-radius: 50%;
-  filter: blur(70px);
-  pointer-events: none;
-}
-
-.hero::before {
-  width: 520px;
-  height: 520px;
-  top: 90px;
-  left: -120px;
-  background: radial-gradient(circle, rgba(57, 255, 136, 0.42), transparent 68%);
-}
-
-.hero::after {
-  width: 460px;
-  height: 460px;
-  top: 220px;
-  right: -140px;
-  background: radial-gradient(circle, rgba(43, 196, 106, 0.3), transparent 68%);
-}
-
 @media (min-width: 900px) {
   .hero {
     padding: 96px 0 104px;
@@ -303,7 +365,7 @@ p {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--green);
+  color: var(--accent-text);
   margin-bottom: 16px;
 }
 
@@ -312,10 +374,11 @@ p {
   font-weight: 800;
   letter-spacing: -0.04em;
   margin-bottom: 20px;
+  color: var(--title-spi);
 }
 
 .hero h1 span {
-  color: var(--green);
+  color: var(--title-notes);
 }
 
 .hero-lead {
@@ -337,7 +400,7 @@ p {
   font-family: var(--font-title);
   font-size: 2.5rem;
   font-weight: 800;
-  color: var(--green);
+  color: var(--accent-text);
   line-height: 1;
 }
 
@@ -373,26 +436,39 @@ p {
 }
 
 .countdown-unit {
-  background: linear-gradient(150deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04));
-  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 999px;
   padding: 18px 4px 14px;
   text-align: center;
+}
+
+/* Texture de verre commune : pilules, cartes, formulaire, contact */
+.countdown-unit,
+.card,
+.form-card,
+.contact-card {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.28),
-    0 10px 30px rgba(0, 0, 0, 0.35);
+    inset 0 1px 0 var(--glass-hi),
+    var(--glass-shadow);
 }
 
 @supports ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  .countdown-unit {
+  .countdown-unit,
+  .card,
+  .form-card,
+  .contact-card {
     -webkit-backdrop-filter: blur(18px) saturate(160%);
     backdrop-filter: blur(18px) saturate(160%);
   }
 }
 
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  .countdown-unit {
-    background: var(--surface-2);
+  .countdown-unit,
+  .card,
+  .form-card,
+  .contact-card {
+    background: var(--surface-solid);
   }
 }
 
@@ -408,13 +484,13 @@ p {
 
 .countdown-unit span {
   font-size: 0.8125rem;
-  color: rgba(237, 242, 238, 0.72);
+  color: var(--muted);
 }
 
 .countdown-done {
   font-family: var(--font-title);
   font-size: 1.5rem;
-  color: var(--green);
+  color: var(--accent-text);
 }
 
 /* Sections */
@@ -440,13 +516,13 @@ p {
   font-family: var(--font-title);
   font-size: clamp(1.5rem, 3.4vw, 2rem);
   font-weight: 700;
-  color: var(--green);
+  color: var(--accent-text);
   line-height: 1.15;
 }
 
 .prose-block p {
   font-size: 1.1875rem;
-  color: #cfd8d2;
+  color: var(--text-soft);
 }
 
 .cards {
@@ -466,8 +542,6 @@ p {
 }
 
 .card {
-  background: var(--surface);
-  border: 1px solid var(--line);
   border-radius: var(--radius-m);
   padding: 28px 24px;
 }
@@ -483,8 +557,8 @@ p {
 }
 
 .card-featured {
-  background: linear-gradient(140deg, rgba(57, 255, 136, 0.12), var(--surface) 55%);
-  border-color: var(--green-dim);
+  background: linear-gradient(140deg, rgb(var(--accent-rgb) / 0.22), transparent 60%), var(--glass-bg);
+  border-color: var(--accent-dim);
 }
 
 .card-featured h3 {
@@ -492,23 +566,23 @@ p {
 }
 
 .card-featured p {
-  color: #cfd8d2;
+  color: var(--text-soft);
   max-width: 62ch;
 }
 
 .pill {
   display: inline-block;
   padding: 4px 14px;
-  border: 1px solid var(--green-dim);
+  border: 1px solid var(--accent-dim);
   border-radius: 999px;
-  color: var(--green);
+  color: var(--accent-text);
   font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.02em;
 }
 
 .todo {
-  border: 1px dashed var(--green-dim);
+  border: 1px dashed var(--accent-dim);
   border-radius: var(--radius-s);
   padding: 16px 20px;
   color: var(--muted);
@@ -534,13 +608,13 @@ p {
   top: -2px;
   width: 36px;
   height: 36px;
-  border: 1px solid var(--green);
+  border: 1px solid var(--accent-text);
   border-radius: 50%;
   display: grid;
   place-items: center;
   font-family: var(--font-title);
   font-weight: 700;
-  color: var(--green);
+  color: var(--accent-text);
 }
 
 .steps strong {
@@ -556,8 +630,6 @@ p {
 /* Formulaire */
 
 .form-card {
-  background: var(--surface);
-  border: 1px solid var(--line);
   border-radius: var(--radius-m);
   padding: 24px 16px;
 }
@@ -600,14 +672,13 @@ p {
   padding: 10px 14px;
   border: 1px solid var(--line);
   border-radius: var(--radius-s);
-  background: var(--bg);
+  background: var(--field-bg);
   color: var(--text);
   font: inherit;
-  color-scheme: dark;
 }
 
 .field input:focus {
-  border-color: var(--green);
+  border-color: var(--accent-text);
   outline: none;
 }
 
@@ -647,18 +718,18 @@ fieldset.field {
   padding: 0 18px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: var(--bg);
+  background: var(--field-bg);
   font-size: 0.9375rem;
 }
 
 .choice input:checked + span {
-  border-color: var(--green);
-  color: var(--green);
+  border-color: var(--accent-text);
+  color: var(--accent-text);
   font-weight: 600;
 }
 
 .choice input:focus-visible + span {
-  outline: 2px solid var(--green);
+  outline: 2px solid var(--accent-text);
   outline-offset: 2px;
 }
 
@@ -675,7 +746,7 @@ fieldset.field {
   height: 20px;
   margin-top: 3px;
   flex: none;
-  accent-color: var(--green);
+  accent-color: var(--accent);
 }
 
 .hint {
@@ -743,7 +814,7 @@ fieldset.field {
 
 .faq summary::after {
   content: "+";
-  color: var(--green);
+  color: var(--accent-text);
   font-size: 1.25rem;
   line-height: 1;
 }
@@ -785,7 +856,7 @@ fieldset.field {
   padding: 0 18px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.04);
+  background: var(--chip-bg);
   color: var(--muted);
   font: inherit;
   font-weight: 600;
@@ -794,14 +865,14 @@ fieldset.field {
 
 .shots-tabs button:hover,
 .view-switch button:hover {
-  border-color: var(--green-dim);
+  border-color: var(--accent-dim);
   color: var(--text);
 }
 
 .shots-tabs button[aria-selected="true"] {
-  border-color: var(--green);
-  background: var(--green);
-  color: var(--bg);
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--on-accent);
 }
 
 .shot-panel {
@@ -842,17 +913,17 @@ fieldset.field {
 }
 
 .view-switch button.is-on {
-  border-color: var(--green);
-  color: var(--green);
+  border-color: var(--accent-text);
+  color: var(--accent-text);
 }
 
 .shot-frame {
   margin: 0;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+  border: 1px solid var(--shot-border);
   border-radius: var(--radius-m);
   background: #fff;
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55);
+  box-shadow: var(--shot-shadow);
 }
 
 .shot-frame img {
@@ -886,8 +957,6 @@ fieldset.field {
 /* Contact */
 
 .contact-card {
-  background: var(--surface);
-  border: 1px solid var(--line);
   border-radius: var(--radius-m);
   padding: 28px 24px;
 }
@@ -909,17 +978,17 @@ fieldset.field {
 .link-btn {
   min-height: 44px;
   padding: 0 20px;
-  border: 1px solid var(--green-dim);
+  border: 1px solid var(--accent-dim);
   border-radius: 999px;
   background: transparent;
-  color: var(--green);
+  color: var(--accent-text);
   font: inherit;
   font-weight: 600;
   cursor: pointer;
 }
 
 .link-btn:hover {
-  background: rgba(57, 255, 136, 0.12);
+  background: rgb(var(--accent-rgb) / 0.14);
 }
 
 /* Pied de page */
@@ -952,7 +1021,7 @@ fieldset.field {
 }
 
 .footer-links a:hover {
-  color: var(--green);
+  color: var(--accent-text);
 }
 
 /* Pages de texte (légal, merci, 404) */
@@ -983,7 +1052,7 @@ fieldset.field {
 
 .prose p,
 .prose li {
-  color: #cfd8d2;
+  color: var(--text-soft);
 }
 
 .prose ul {
@@ -1025,7 +1094,7 @@ fieldset.field {
   font-family: var(--font-title);
   font-size: clamp(5rem, 20vw, 9rem);
   font-weight: 800;
-  color: var(--green);
+  color: var(--accent-text);
   line-height: 1;
   margin-bottom: 16px;
 }
@@ -1050,37 +1119,6 @@ button,
 a,
 summary {
   touch-action: manipulation;
-}
-
-/* Halos du hero : dégradés radiaux (plus de flou coûteux), mis en mouvement lentement */
-.hero::before,
-.hero::after {
-  filter: none;
-  will-change: transform;
-}
-
-.hero::before {
-  background: radial-gradient(circle, rgba(57, 255, 136, 0.34) 0%, rgba(57, 255, 136, 0) 62%);
-  animation: drift-a 16s ease-in-out infinite;
-  translate: calc(var(--px, 0) * 34px) calc(var(--py, 0) * 24px);
-  transition: translate 0.8s var(--ease-out);
-}
-
-.hero::after {
-  background: radial-gradient(circle, rgba(43, 196, 106, 0.28) 0%, rgba(43, 196, 106, 0) 62%);
-  animation: drift-b 20s ease-in-out infinite;
-  translate: calc(var(--px, 0) * -28px) calc(var(--py, 0) * -20px);
-  transition: translate 0.8s var(--ease-out);
-}
-
-@keyframes drift-a {
-  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-  50% { transform: translate3d(70px, -34px, 0) scale(1.14); }
-}
-
-@keyframes drift-b {
-  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-  50% { transform: translate3d(-60px, 40px, 0) scale(1.1); }
 }
 
 /* Entrée du hero, en cascade */
@@ -1127,7 +1165,7 @@ summary {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(110deg, transparent 36%, rgba(255, 255, 255, 0.2) 50%, transparent 64%);
+  background: linear-gradient(110deg, transparent 36%, var(--sheen) 50%, transparent 64%);
   transform: translate3d(-130%, 0, 0);
   animation: sheen 7s ease-in-out infinite;
   pointer-events: none;
@@ -1169,7 +1207,7 @@ summary {
   inset: -6px;
   z-index: -1;
   border-radius: inherit;
-  background: radial-gradient(closest-side, rgba(57, 255, 136, 0.55), transparent);
+  background: radial-gradient(closest-side, rgb(var(--accent-rgb) / 0.6), transparent);
   opacity: 0;
   transform: scale(0.9);
   transition: opacity 0.35s var(--ease-out), transform 0.35s var(--ease-out);
@@ -1192,7 +1230,7 @@ summary {
 
   .card:hover {
     transform: translate3d(0, -4px, 0);
-    border-color: var(--green-dim);
+    border-color: var(--accent-dim);
   }
 
   .brand:hover img {
@@ -1214,7 +1252,7 @@ summary {
 }
 
 .site-header.is-scrolled {
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 10px 30px rgb(var(--accent-rgb) / 0.18);
 }
 
 @supports (animation-timeline: scroll()) {
@@ -1225,7 +1263,7 @@ summary {
     right: 0;
     bottom: -1px;
     height: 2px;
-    background: var(--green);
+    background: var(--accent);
     transform-origin: 0 50%;
     transform: scaleX(0);
     animation: progress linear both;
@@ -1250,7 +1288,7 @@ summary {
   height: 44px;
   width: 0;
   border-radius: 999px;
-  background: var(--green);
+  background: var(--accent);
   transform: translate3d(var(--tx, 0), 0, 0);
   transition: transform 0.5s var(--ease-out), width 0.5s var(--ease-out);
   pointer-events: none;
@@ -1392,7 +1430,7 @@ summary {
   display: inline-flex;
   align-items: center;
   padding: 0 16px;
-  border: 1px solid var(--green-dim);
+  border: 1px solid var(--accent-dim);
   border-radius: 999px;
 }
 
@@ -1427,7 +1465,7 @@ summary {
   margin-top: 1px;
 }
 
-@media (max-width: 899px) {
+@media (max-width: 1039px) {
   /* En-tête réduit à une ligne, le menu s'ouvre en panneau */
   .js .site-header .wrap {
     flex-wrap: nowrap;
@@ -1495,7 +1533,7 @@ summary {
     height: calc(100dvh - var(--header-h));
     padding: 20px max(16px, env(safe-area-inset-left)) calc(28px + env(safe-area-inset-bottom));
     overflow-y: auto;
-    background: rgba(12, 15, 13, 0.985);
+    background: var(--nav-bg);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
     opacity: 0;
@@ -1534,7 +1572,7 @@ summary {
   }
 
   .site-nav a:active {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--hover);
   }
 
   html.nav-lock {
@@ -1590,10 +1628,6 @@ summary {
     font-size: 1.3rem;
   }
 
-  .hero::before,
-  .hero::after {
-    animation-duration: 28s;
-  }
 }
 
 /* Mouvement réduit : tout reste visible, rien ne bouge */
@@ -1612,5 +1646,184 @@ summary {
   }
 }
 
-/* Contraste du nouveau logo sur fond sombre. */
-.brand img{object-fit:contain;background:#edf2ee;border-radius:6px;padding:1px;}
+/* Le logo est noir : une pastille claire le garde lisible sur fond sombre. */
+.brand img {
+  object-fit: contain;
+  background: var(--logo-bg);
+  border-radius: 6px;
+  padding: 1px;
+}
+
+/* =========================================================================================================
+   Marque : « Spi » en noir (blanc la nuit), « Notes » en violet
+   ========================================================================================================= */
+
+.brand .name {
+  color: var(--title-spi);
+}
+
+.brand .name span {
+  color: var(--title-notes);
+}
+
+/* =========================================================================================================
+   Gaz violet : nuages diffus qui dérivent très lentement derrière toute la page.
+   Dégradés radiaux seulement (pas de filtre de flou), animés en transform/opacity : traités par le processeur graphique.
+   Les couleurs (--g) et l'intensité (--gas-k) dépendent du mode jour ou nuit.
+   ========================================================================================================= */
+
+.gas {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  contain: strict;
+}
+
+.gas i {
+  position: absolute;
+  display: block;
+  width: var(--w);
+  height: var(--h, var(--w));
+  left: var(--x);
+  top: var(--y);
+  border-radius: 50%;
+  background: radial-gradient(
+    closest-side,
+    rgb(var(--g) / calc(var(--a) * var(--gas-k))) 0%,
+    rgb(var(--g) / calc(var(--a) * var(--gas-k) * 0.6)) 34%,
+    rgb(var(--g) / calc(var(--a) * var(--gas-k) * 0.2)) 66%,
+    rgb(var(--g) / 0) 100%
+  );
+  will-change: transform, opacity;
+  animation: gas-a var(--t) ease-in-out var(--s, 0s) infinite alternate;
+}
+
+.gas i:nth-child(1) { --g: 139 92 246; --a: 0.62; --w: 78vmax; --h: 62vmax; --x: -22vmax; --y: -20vmax; --t: 61s; --s: -12s; }
+.gas i:nth-child(2) { --g: 168 85 247; --a: 0.5; --w: 66vmax; --h: 74vmax; --x: 46vw; --y: 6vh; --t: 73s; --s: -31s; animation-name: gas-b; }
+.gas i:nth-child(3) { --g: 192 70 220; --a: 0.34; --w: 58vmax; --h: 50vmax; --x: -18vmax; --y: 52vh; --t: 67s; --s: -22s; animation-name: gas-c; }
+.gas i:nth-child(4) { --g: 99 102 241; --a: 0.46; --w: 70vmax; --h: 56vmax; --x: 40vw; --y: 58vh; --t: 85s; --s: -48s; animation-name: gas-b; }
+.gas i:nth-child(5) { --g: 196 181 253; --a: 0.3; --w: 46vmax; --x: 22vw; --y: -6vh; --t: 49s; --s: -9s; animation-name: gas-c; }
+.gas i:nth-child(6) { --g: 109 40 217; --a: 0.38; --w: 90vmax; --h: 40vmax; --x: 5vw; --y: 32vh; --t: 93s; --s: -57s; }
+
+@keyframes gas-a {
+  0% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); opacity: 0.8; }
+  50% { transform: translate3d(11vw, 7vh, 0) rotate(18deg) scale(1.16); opacity: 1; }
+  100% { transform: translate3d(-5vw, 13vh, 0) rotate(-10deg) scale(0.94); opacity: 0.85; }
+}
+
+@keyframes gas-b {
+  0% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1.05); opacity: 1; }
+  50% { transform: translate3d(-12vw, -6vh, 0) rotate(-22deg) scale(0.92); opacity: 0.78; }
+  100% { transform: translate3d(7vw, -12vh, 0) rotate(12deg) scale(1.2); opacity: 0.95; }
+}
+
+@keyframes gas-c {
+  0% { transform: translate3d(0, 0, 0) rotate(0deg) scale(0.95); opacity: 0.85; }
+  50% { transform: translate3d(9vw, -9vh, 0) rotate(26deg) scale(1.22); opacity: 1; }
+  100% { transform: translate3d(-8vw, 5vh, 0) rotate(-14deg) scale(1.02); opacity: 0.8; }
+}
+
+@media (max-width: 700px) {
+  .gas i {
+    animation-duration: calc(var(--t) * 1.25);
+  }
+}
+
+/* =========================================================================================================
+   Bouton jour / nuit
+   ========================================================================================================= */
+
+.theme-toggle {
+  display: none;
+}
+
+.js .theme-toggle {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid var(--glass-border);
+  border-radius: 50%;
+  background: var(--glass-bg);
+  box-shadow: inset 0 1px 0 var(--glass-hi);
+  color: var(--text);
+  cursor: pointer;
+  transition: transform 0.4s var(--ease-spring), border-color 0.25s;
+}
+
+.theme-toggle:active {
+  transform: scale(0.92);
+}
+
+@media (hover: hover) {
+  .theme-toggle:hover {
+    border-color: var(--accent-dim);
+    transform: rotate(-12deg) scale(1.06);
+  }
+}
+
+.theme-toggle svg {
+  grid-area: 1 / 1;
+  width: 21px;
+  height: 21px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.55s var(--ease-out), opacity 0.3s;
+}
+
+/* On montre l'icône du mode vers lequel le bouton fait basculer */
+.theme-toggle .i-sun {
+  opacity: 0;
+  transform: rotate(-80deg) scale(0.4);
+}
+
+:root[data-theme="dark"] .theme-toggle .i-sun {
+  opacity: 1;
+  transform: none;
+}
+
+:root[data-theme="dark"] .theme-toggle .i-moon {
+  opacity: 0;
+  transform: rotate(80deg) scale(0.4);
+}
+
+.site-header .wrap > .theme-toggle:last-child {
+  margin-left: auto;
+}
+
+/* Lien « Précommander » du menu : seulement sur les très petits écrans, où il n'y a plus la place dans l'en-tête */
+.site-nav a.nav-cta {
+  display: none;
+}
+
+@media (max-width: 439px) {
+  .js .header-cta {
+    display: none;
+  }
+
+  .js .theme-toggle {
+    margin-left: auto;
+  }
+
+  .js .site-nav a.nav-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 14px;
+    background: var(--accent);
+    color: var(--on-accent);
+    font-size: 1.125rem;
+  }
+}
+
+/* Fondu de la page quand on change de mode */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.35s;
+}

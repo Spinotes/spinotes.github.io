@@ -117,7 +117,7 @@
     bouton.addEventListener("click", function () { ouvre(!root.classList.contains("nav-open")); });
     menu.addEventListener("click", function (e) { if (e.target.closest("a")) ouvre(false); });
     document.addEventListener("keydown", function (e) { if (e.key === "Escape" && root.classList.contains("nav-open")) { ouvre(false); bouton.focus(); } });
-    window.addEventListener("resize", function () { if (window.innerWidth >= 900) ouvre(false); });
+    window.addEventListener("resize", function () { if (window.innerWidth >= 1040) ouvre(false); });
   }
 
   // Parallaxe douce du hero et bouton « magnétique » : seulement avec une souris (pas sur téléphone), au plus une mise à jour par image.
