@@ -1611,3 +1611,6 @@ summary {
     transform: none;
   }
 }
+
+/* Contraste du nouveau logo sur fond sombre. */
+.brand img{object-fit:contain;background:#edf2ee;border-radius:6px;padding:1px;}
