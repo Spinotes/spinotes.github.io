@@ -388,6 +388,16 @@ p {
   margin-bottom: 36px;
 }
 
+.hero-note {
+  margin-top: 16px;
+  font-size: 0.9375rem;
+  color: var(--muted);
+}
+
+.hero-note strong {
+  color: var(--accent-text);
+}
+
 .price-line {
   display: flex;
   flex-wrap: wrap;
@@ -1136,7 +1146,8 @@ summary {
 .js .hero h1,
 .js .hero .hero-lead,
 .js .hero .countdown-label,
-.js .hero .btn {
+.js .hero .btn,
+.js .hero .hero-note {
   animation: rise 0.95s var(--ease-out) both;
 }
 
@@ -1145,6 +1156,7 @@ summary {
 .js .hero .hero-lead { animation-delay: 0.26s; }
 .js .hero .countdown-label { animation-delay: 0.36s; }
 .js .hero .btn { animation-delay: 0.78s; }
+.js .hero .hero-note { animation-delay: 0.88s; }
 
 .js .countdown-unit {
   animation: pill-in 0.9s var(--ease-spring) both;

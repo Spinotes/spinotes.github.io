@@ -31,7 +31,7 @@
       var diff = target - Date.now();
       if (diff <= 0) {
         clearInterval(timer);
-        countdown.innerHTML = '<p class="countdown-done">SpiNotes est disponible.</p>';
+        countdown.innerHTML = '<p class="countdown-done">Les précommandes sont ouvertes.</p>';
         return;
       }
       var s = Math.floor(diff / 1000);
@@ -222,7 +222,7 @@
     }
   }
 
-  // Formulaire de précommande
+  // Formulaire de pré-inscription
   var form = document.getElementById("preorder-form");
   if (!form) return;
 
@@ -275,10 +275,10 @@
     if (!/^(0[1-9]\d{8}|\+\d{8,15})$/.test(tel)) errors.telephone = "Numéro invalide. Exemple : 06 12 34 56 78.";
     var a = age(data.naissance);
     if (!data.naissance || a < 0 || a > 120) errors.naissance = "Date de naissance invalide.";
-    else if (a < 15) errors.naissance = "La précommande est ouverte à partir de 15 ans.";
+    else if (a < 15) errors.naissance = "La pré-inscription est ouverte à partir de 15 ans.";
     if (["etudiant", "perso", "pro"].indexOf(data.situation) === -1) errors.situation = "Choisissez une option.";
     if (data.situation === "pro" && !data.entreprise) errors.entreprise = "Indiquez le nom de votre entreprise.";
-    if (!data.consentement) errors.consentement = "Votre accord est nécessaire pour enregistrer la précommande.";
+    if (!data.consentement) errors.consentement = "Votre accord est nécessaire pour enregistrer la pré-inscription.";
     return errors;
   }
 
@@ -315,7 +315,7 @@
     }
 
     if (!endpoint) {
-      statusEl.textContent = "Les précommandes ne sont pas encore ouvertes. Écrivez-nous à spinotes.general@gmail.com.";
+      statusEl.textContent = "Les pré-inscriptions ne sont pas encore ouvertes. Écrivez-nous à spinotes.general@gmail.com.";
       statusEl.classList.add("is-error");
       return;
     }
@@ -349,7 +349,7 @@
           : "Connexion impossible. Vérifiez votre réseau et réessayez.";
         statusEl.classList.add("is-error");
         submitBtn.disabled = false;
-        submitBtn.textContent = "Valider ma précommande";
+        submitBtn.textContent = "Valider ma pré-inscription";
       });
   });
 })();
