@@ -5,7 +5,7 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://spinotes-precommande.spinotes-precommande.workers.dev; form-action 'self'; base-uri 'self'; object-src 'none'">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>SpiNotes | Ne rangez plus vos notes</title>
-  <meta name="description" content="SpiNotes range vos notes à votre place. Achat unique sans abonnement, IA française en local. Lancement au premier trimestre 2027 : pré-inscrivez-vous gratuitement pour réserver le tarif de 6,99 €.">
+  <meta name="description" content="Notes, SpinSheet et SmartCell : écrivez, calculez et gardez vos chiffres utiles sous les yeux. Achat unique sans abonnement en solo. Lancement au premier trimestre 2027 : pré-inscrivez-vous gratuitement pour réserver le tarif de 6,99 €.">
   <link rel="canonical" href="https://spinotes.github.io/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
@@ -24,6 +24,7 @@
   <link rel="preload" href="fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
+  <script src="js/smartcell.js" defer></script>
   <script src="js/stats.js" defer></script>
 </head>
 <body>
@@ -35,12 +36,13 @@
       <a class="brand" href="./" aria-label="SpiNotes, accueil">
         <img src="logo.png" alt="" width="32" height="32"><span class="name">Spi<span>Notes</span></span></a>
       <nav class="site-nav" id="menu-principal" aria-label="Navigation principale">
-        <a href="#app">SpiNotes, c'est quoi ?</a>
+        <a href="#app">Découvrir</a>
+        <a href="#smartcell">SmartCell</a>
         <a href="#apercu">Aperçu</a>
         <a href="#avantages">Avantages</a>
         <a href="#offre">Tarif</a>
         <a href="#faq">FAQ</a>
-        <a href="#contact">Contactez-nous</a>
+        <a href="#contact">Contact</a>
         <a class="nav-cta" href="#precommande">Se pré-inscrire</a>
       </nav>
       <a class="header-cta" href="#precommande" data-track="cta_header">Se pré-inscrire</a>
@@ -54,7 +56,7 @@
       <div class="wrap">
         <p class="eyebrow">Lancement au premier trimestre 2027</p>
         <h1>Spi<span>Notes</span></h1>
-        <p class="hero-lead">Vous écrivez, SpiNotes range. Moins de temps à organiser vos notes, plus de temps pour le reste.</p>
+        <p class="hero-lead">Vous écrivez, SpiNotes range. Reliez vos idées, calculez dans SpinSheet et gardez les chiffres utiles près de vos notes avec SmartCell.</p>
 
         <div class="countdown" id="countdown" data-target="2027-01-04T00:00:00+01:00">
           <p class="countdown-label">Ouverture des précommandes dans</p>
@@ -84,6 +86,39 @@
       </div>
     </section>
 
+    <section class="section smartcell-section" id="smartcell" aria-labelledby="smartcell-title">
+      <div class="wrap">
+        <div class="smartcell-heading">
+          <div><p class="eyebrow">SmartCell · votre tableau, au-delà du tableau</p><h2 id="smartcell-title">Le bon chiffre,<br>là où vous travaillez.</h2></div>
+          <p class="section-lead">Un budget, un total, une moyenne : sortez une cellule de SpinSheet et retrouvez-la dans vos notes, vos cartes mentales ou votre SmartDesk. Sa valeur suit celle de la feuille source.</p>
+        </div>
+        <div class="smartcell-demo" data-smartcell-demo>
+          <div class="demo-source">
+            <div class="demo-window-title"><span class="demo-window-dot"></span> SpinSheet <span>Budget du projet</span></div>
+            <div class="demo-formula"><span>B4</span><span>ƒx</span><code>=SOMME(B2:B3)</code></div>
+            <table class="demo-budget" aria-label="Budget fictif pour illustrer SmartCell">
+              <thead><tr><th></th><th>A</th><th>B</th></tr></thead>
+              <tbody><tr><th>1</th><td>Poste</td><td>Montant</td></tr><tr><th>2</th><td>Matériel</td><td data-demo-material>1 200 €</td></tr><tr><th>3</th><td>Communication</td><td>800 €</td></tr><tr class="demo-source-cell"><th>4</th><td>Budget total</td><td data-demo-total>2 000 €</td></tr></tbody>
+            </table>
+            <button class="demo-add" type="button" data-demo-add>Ajouter 100 € au matériel</button>
+          </div>
+          <div class="demo-note">
+            <p class="demo-note-label">Note du projet</p><h3>Préparer le lancement</h3><p>La prochaine étape : valider le budget et répartir les actions.</p>
+            <div class="demo-smartcell"><span class="demo-live" data-demo-state>Synchronisée</span><p>Budget total</p><strong data-demo-widget>2 000 €</strong><small>SpinSheet · Budget du projet · B4</small></div>
+            <button class="demo-freeze" type="button" aria-pressed="false" data-demo-freeze>Figer la valeur</button>
+            <p class="demo-feedback" role="status" aria-live="polite" data-demo-feedback>Modifiez le budget pour voir la SmartCell se mettre à jour.</p>
+          </div>
+          <div class="demo-desk"><span>SmartDesk</span><div class="demo-desk-cell"><small>Budget total</small><strong data-demo-desk>2 000 €</strong></div><p>Vos cellules utiles, réunies au même endroit.</p><span class="demo-pearls" aria-hidden="true"><i></i><i></i><i></i></span></div>
+        </div>
+        <p class="smartcell-caption">Illustration interactive avec des données fictives. Ce n'est pas une capture de l'application.</p>
+        <div class="smartcell-points">
+          <article><span>01</span><h3>Un chiffre qui reste relié</h3><p>La cellule source change ? La SmartCell affiche la nouvelle valeur. Vous pouvez aussi figer une valeur, puis réactiver sa synchronisation.</p></article>
+          <article><span>02</span><h3>Un widget à votre place</h3><p>Donnez-lui un titre, adaptez sa taille et déplacez-la. Fixée sur une page ou flottante, elle garde le contexte dont vous avez besoin.</p></article>
+          <article><span>03</span><h3>Votre SmartDesk</h3><p>Une languette de verre ouvre le bureau de vos chiffres : cinq SmartCell à portée de main et une bibliothèque pour en organiser jusqu'à quarante.</p></article>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="apercu">
       <div class="wrap">
         <h2>SpiNotes en images</h2>
@@ -93,6 +128,7 @@
           <div class="shots-tabs" role="tablist" aria-label="Fonctions de SpiNotes">
             <span class="tab-pill" aria-hidden="true"></span>
             <button type="button" role="tab" id="tab-notes" aria-controls="panel-notes" aria-selected="true" data-track="apercu_onglet">Notes</button>
+            <button type="button" role="tab" id="tab-spinsheet" aria-controls="panel-spinsheet" aria-selected="false" tabindex="-1" data-track="apercu_onglet">SpinSheet &amp; graphiques</button>
             <button type="button" role="tab" id="tab-mindnote" aria-controls="panel-mindnote" aria-selected="false" tabindex="-1" data-track="apercu_onglet">Cartes mentales</button>
             <button type="button" role="tab" id="tab-bases" aria-controls="panel-bases" aria-selected="false" tabindex="-1" data-track="apercu_onglet">Bases de données</button>
             <button type="button" role="tab" id="tab-carte" aria-controls="panel-carte" aria-selected="false" tabindex="-1" data-track="apercu_onglet">Carte des notes</button>
@@ -106,6 +142,14 @@
               <p>Une note peut en citer une autre d'un simple geste, et le lien reste cliquable. Cases à cocher, citations, encadrés, et même des bases de données posées directement dans la page : tout ce qui concerne un projet vit au même endroit.</p>
             </div>
             <figure class="shot-frame"><img src="img/app/note.webp" width="2880" height="1800" alt="Une note SpiNotes : titre, encadré, liste à cocher, liens vers d'autres notes et tableau des actions du projet" decoding="async"></figure>
+          </div>
+
+          <div class="shot-panel" role="tabpanel" id="panel-spinsheet" aria-labelledby="tab-spinsheet" hidden>
+            <div class="shot-text"><h3>Vos calculs restent dans votre espace de notes</h3><p>SpinSheet réunit les formules, les formats de nombres, les couleurs, les bordures et les cellules fusionnées. Importez un classeur Excel, travaillez dans ses onglets et représentez une sélection avec un graphique en colonnes.</p><p>Une cellule mérite d'être suivie ailleurs ? Transformez-la en SmartCell, sans recopier son résultat à la main.</p></div>
+            <div class="sheet-illustration" role="img" aria-label="Illustration d'une SpinSheet : montants par mois, formule SOMME et graphique en colonnes">
+              <div class="sheet-demo-bar"><strong>Suivi du projet</strong><span>SpinSheet</span></div><div class="demo-formula"><span>D2</span><span>ƒx</span><code>=SOMME(A2:C2)</code></div>
+              <div class="sheet-illustration-content"><table class="demo-budget"><thead><tr><th></th><th>A</th><th>B</th><th>C</th><th>D</th></tr></thead><tbody><tr><th>1</th><td>Janvier</td><td>Février</td><td>Mars</td><td>Total</td></tr><tr><th>2</th><td>1 200 €</td><td>1 800 €</td><td>2 400 €</td><td class="demo-total">5 400 €</td></tr></tbody></table><div class="sheet-chart"><div><i style="--bar:50%"></i><span>Janvier</span></div><div><i style="--bar:75%"></i><span>Février</span></div><div><i style="--bar:100%"></i><span>Mars</span></div></div></div><p class="sheet-demo-caption">Exemple illustré · données fictives</p>
+            </div>
           </div>
 
           <div class="shot-panel" role="tabpanel" id="panel-mindnote" aria-labelledby="tab-mindnote" hidden>
@@ -160,7 +204,7 @@
           </div>
         </div>
 
-        <p class="shots-note">Captures d'écran réalisées avec des données d'exemple. L'application peut encore évoluer d'ici sa sortie. Sur mobile, faites glisser l'image pour voir le détail.</p>
+        <p class="shots-note">Captures d'écran et illustrations réalisées avec des données d'exemple. L'application peut encore évoluer d'ici sa sortie. Sur mobile, faites glisser l'image pour voir le détail.</p>
       </div>
     </section>
 
@@ -181,7 +225,7 @@
           <article class="card">
             <span class="pill">À la carte</span>
             <h3>Synchronisation et collaboration sur mesure</h3>
-            <p>Vous voulez retrouver vos notes sur votre téléphone ? Une formule de synchronisation, moins chère. Vous voulez travailler à plusieurs ? Ajoutez l'option collaboration. Vous ne payez que ce dont vous avez besoin.</p>
+            <p>La synchronisation entre appareils et le travail à plusieurs font partie des évolutions prévues. Des formules facultatives sont en préparation, distinctes de l'achat de l'application en solo.</p>
           </article>
         </div>
       </div>
@@ -305,7 +349,7 @@
           </details>
           <details>
             <summary>Faut-il un abonnement pour utiliser SpiNotes ?</summary>
-            <p>Non. L'application s'achète une seule fois, sans abonnement. La synchronisation entre vos appareils et la collaboration sont des options facultatives : vous choisissez la formule qui vous correspond, et vous payez moins si vous voulez seulement synchroniser vos notes avec votre téléphone.</p>
+            <p>Non. L'application s'achète une seule fois, sans abonnement. Des options facultatives de synchronisation entre appareils et de collaboration sont en préparation. Leur contenu et leurs tarifs seront précisés avant leur disponibilité.</p>
           </details>
           <details>
             <summary>Le tarif de 6,99 € est-il garanti ?</summary>
@@ -318,6 +362,14 @@
           <details>
             <summary>Quand l'application sort-elle ?</summary>
             <p>Le lancement de SpiNotes est prévu au premier trimestre 2027. Les pré-inscrits sont prévenus par email dès que la date exacte est connue.</p>
+          </details>
+          <details>
+            <summary>À quoi sert une SmartCell ?</summary>
+            <p>Elle affiche une cellule de SpinSheet en dehors de son tableau, par exemple dans une note ou dans le SmartDesk. Sa valeur suit la source tant qu'elle est synchronisée. Vous pouvez la figer pour conserver un résultat de référence, puis réactiver le lien.</p>
+          </details>
+          <details>
+            <summary>SpinSheet remplace-t-il toutes les fonctions d'Excel ?</summary>
+            <p>SpinSheet est un tableur intégré à SpiNotes : formules de calcul, sommes, moyennes, arrondis, mise en forme, onglets, import/export Excel et graphiques en colonnes. Sa compatibilité évolue ; toutes les fonctions avancées, macros et objets des classeurs Excel ne sont pas pris en charge.</p>
           </details>
           <details>
             <summary>Je n'ai pas reçu l'email de confirmation.</summary>
