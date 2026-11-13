@@ -36,7 +36,7 @@
     render();
   }
 
-  if (optedOut()) return;
+  if (optedOut() || location.protocol === "file:" || ["localhost", "127.0.0.1", "[::1]"].indexOf(location.hostname) >= 0) return;
 
   var meta = document.querySelector('meta[name="stats-endpoint"]');
   var endpoint = meta && meta.getAttribute("content");
@@ -46,7 +46,7 @@
     "": "accueil", "index.html": "accueil", "merci": "merci", "cgv": "cgv", "cgu": "cgu",
     "confidentialite": "confidentialite", "mentions-legales": "mentions"
   };
-  var SECTIONS = ["app", "avantages", "offre", "precommande", "faq", "contact"];
+  var SECTIONS = ["app", "spino", "spinsheet", "smartcell", "avantages", "offre", "precommande", "faq", "contact"];
 
   var seg = location.pathname.replace(/\/+$/, "").split("/").pop().replace(/\.html$/, "");
   var page = Object.prototype.hasOwnProperty.call(PAGES, seg) ? PAGES[seg] : "autre";

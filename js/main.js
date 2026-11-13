@@ -78,7 +78,7 @@
 
   // Prix : il « monte » jusqu'à 6,99 € quand il entre dans l'écran.
   var prix = document.querySelector(".price");
-  if (prix && !calmeGlobal && "IntersectionObserver" in window) {
+  if (prix && !prix.closest(".early-price") && !calmeGlobal && "IntersectionObserver" in window) {
     var finalTexte = prix.textContent, cible = 6.99;
     var po = new IntersectionObserver(function (entries) {
       if (!entries[0].isIntersecting) return;
@@ -317,6 +317,11 @@
     if (!endpoint) {
       statusEl.textContent = "Les pré-inscriptions ne sont pas encore ouvertes. Écrivez-nous à spinotes.general@gmail.com.";
       statusEl.classList.add("is-error");
+      return;
+    }
+
+    if (location.protocol === "file:" || ["localhost", "127.0.0.1", "[::1]"].indexOf(location.hostname) >= 0) {
+      statusEl.textContent = "Préparation locale : aucune pré-inscription n’est envoyée. Le formulaire sera actif sur le site public.";
       return;
     }
 

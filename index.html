@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://spinotes-precommande.spinotes-precommande.workers.dev; form-action 'self'; base-uri 'self'; object-src 'none'">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>SpiNotes | Ne rangez plus vos notes</title>
-  <meta name="description" content="Notes, SpinSheet et SmartCell : écrivez, calculez et gardez vos chiffres utiles sous les yeux. Achat unique sans abonnement en solo. Lancement au premier trimestre 2027 : pré-inscrivez-vous gratuitement pour réserver le tarif de 6,99 €.">
+  <title>SpiNotes — vos notes, vos chiffres, votre IA locale</title>
+  <meta name="description" content="Notes reliées, tableurs intelligents et Spino, votre assistant IA local. SpiNotes Solo à 15,99 € ; 6,99 € réservés aux pré-inscrits. Découvrez les offres de synchronisation et collaboration.">
   <link rel="canonical" href="https://spinotes.github.io/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="fr_FR">
-  <meta property="og:title" content="SpiNotes | Ne rangez plus vos notes">
-  <meta property="og:description" content="Lancement au premier trimestre 2027. Achat unique sans abonnement, IA française en local. Pré-inscription gratuite : 6,99 € réservés.">
+  <meta property="og:title" content="SpiNotes — vos notes, vos chiffres, votre IA locale">
+  <meta property="og:description" content="Un espace pour écrire, calculer et avancer avec Spino. Traitement IA local et tableurs accessibles. Pré-inscription gratuite : SpiNotes Solo à 6,99 € au lieu de 15,99 €.">
   <meta property="og:url" content="https://spinotes.github.io/">
   <meta property="og:image" content="https://spinotes.github.io/og.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -23,7 +23,9 @@
   <link rel="preload" href="fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/product042.css">
   <script src="js/main.js" defer></script>
+  <script src="js/product042.js" defer></script>
   <script src="js/smartcell.js" defer></script>
   <script src="js/stats.js" defer></script>
 </head>
@@ -36,13 +38,13 @@
       <a class="brand" href="./" aria-label="SpiNotes, accueil">
         <img src="logo.png" alt="" width="32" height="32"><span class="name">Spi<span>Notes</span></span></a>
       <nav class="site-nav" id="menu-principal" aria-label="Navigation principale">
-        <a href="#app">Découvrir</a>
-        <a href="#smartcell">SmartCell</a>
+        <a href="#app">SpiNotes, c'est quoi ?</a>
+        <a href="#spino">Spino</a>
+        <a href="#spinsheet">SpinSheet</a>
         <a href="#apercu">Aperçu</a>
-        <a href="#avantages">Avantages</a>
-        <a href="#offre">Tarif</a>
+        <a href="#offre">Offres</a>
         <a href="#faq">FAQ</a>
-        <a href="#contact">Contact</a>
+        <a href="#contact">Contactez-nous</a>
         <a class="nav-cta" href="#precommande">Se pré-inscrire</a>
       </nav>
       <a class="header-cta" href="#precommande" data-track="cta_header">Se pré-inscrire</a>
@@ -52,24 +54,23 @@
   </header>
 
   <main id="contenu">
-    <section class="hero">
-      <div class="wrap">
-        <p class="eyebrow">Lancement au premier trimestre 2027</p>
-        <h1>Spi<span>Notes</span></h1>
-        <p class="hero-lead">Vous écrivez, SpiNotes range. Reliez vos idées, calculez dans SpinSheet et gardez les chiffres utiles près de vos notes avec SmartCell.</p>
-
-        <div class="countdown" id="countdown" data-target="2027-01-04T00:00:00+01:00">
-          <p class="countdown-label">Ouverture des précommandes dans</p>
-          <div class="countdown-grid" aria-live="off">
-            <div class="countdown-unit"><strong data-unit="days">--</strong><span>jours</span></div>
-            <div class="countdown-unit"><strong data-unit="hours">--</strong><span>heures</span></div>
-            <div class="countdown-unit"><strong data-unit="minutes">--</strong><span>minutes</span></div>
-            <div class="countdown-unit"><strong data-unit="seconds">--</strong><span>secondes</span></div>
-          </div>
+    <section class="hero hero-product">
+      <div class="wrap hero-layout">
+        <div class="hero-copy"><p class="eyebrow">Vos idées ont de la suite.</p>
+          <h1>Vos notes.<br>Vos chiffres.<br><span>Votre espace.</span></h1>
+          <p class="hero-lead">Écrivez, reliez et construisez vos outils. Avec Spino, votre assistant IA local, SpiNotes vous aide à passer de l’idée à l’action.</p>
+          <div class="hero-actions"><a class="btn" href="#precommande" data-track="cta_hero">Réserver le tarif de 6,99 €</a><a class="text-link" href="#spino">Rencontrer Spino <span aria-hidden="true">↗</span></a></div>
+          <p class="hero-note">Au lieu de <s>15,99 €</s> pour l’app Solo. Pré-inscription gratuite, sans engagement.</p>
+          <ul class="hero-facts" aria-label="L’essentiel"><li>Windows</li><li>Achat unique en solo</li><li>IA locale en option</li></ul>
+          <p class="launch-note">Lancement prévu au premier trimestre 2027.</p>
         </div>
-
-        <a class="btn" href="#precommande" data-track="cta_hero">Je me pré-inscris</a>
-        <p class="hero-note">Gratuit et sans engagement. Les pré-inscrits gardent SpiNotes à <strong>6,99 €</strong>.</p>
+        <div class="hero-workspace" aria-label="Illustration d’un espace SpiNotes">
+          <div class="workspace-top"><span class="window-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>Votre espace de travail</span><span class="local-tag">● Local</span></div>
+          <div class="workspace-grid"><div class="workspace-note"><span class="mini-label">NOTE · PROJET ATELIER</span><h2>Une idée qui<br>prend forme.</h2><p>Préparer le lancement de la collection.</p><ul><li><span aria-hidden="true">✓</span> Poser les premières idées</li><li><span aria-hidden="true">✓</span> Relier le budget au projet</li><li><span aria-hidden="true">○</span> Trouver le prochain pas</li></ul><span class="note-link">↗ Budget de lancement</span></div>
+          <div class="workspace-number"><span>CHIFFRE D’AFFAIRES</span><strong>108 700 €</strong><small>Janvier → juin · données d’exemple</small><svg viewBox="0 0 260 100" role="img" aria-label="Évolution illustrative du chiffre d’affaires de janvier à juin"><path class="mini-area" d="M5 85 55 70 105 74 155 45 205 31 255 9V100H5Z"/><path class="mini-line" d="M5 85 55 70 105 74 155 45 205 31 255 9"/></svg></div>
+          <div class="workspace-spino"><span class="mini-label">SPINO · IA LOCALE</span><p>On fait avancer votre projet ? <img src="img/spino.png" width="32" height="32" alt=""/></p><span>« Range cette note dans mon projet Atelier. »</span><div class="spino-answer"><span aria-hidden="true">✓</span> La note rejoint votre base, avec son contenu.</div></div></div>
+          <p class="illustration-label">Illustration du fonctionnement · l’interface de l’application peut évoluer</p>
+        </div>
       </div>
     </section>
 
@@ -77,15 +78,22 @@
       <div class="wrap split">
         <div>
           <h2>À quoi sert SpiNotes</h2>
-          <p class="lead-accent">Fini le rangement.</p>
+          <p class="lead-accent">Un espace pour penser et agir.</p>
         </div>
         <div class="prose-block">
-          <p>Vous prenez une note, SpiNotes la classe à sa place. Plus de dossiers à créer, plus de tri le dimanche soir, plus de notes perdues au fond d'un tiroir numérique.</p>
-          <p>Le temps que vous passiez à organiser, vous le passez à autre chose : avancer sur un projet, réviser, ou simplement souffler.</p>
+          <p>Rassemblez vos notes, vos projets et vos données dans un même espace. Reliez une idée à une autre, parcourez votre bibliothèque et demandez à Spino de retrouver ou ranger une note.</p>
+          <p>Besoin d’aller plus loin ? Construisez un suivi de chiffre d’affaires, une fiche de révision ou un tableau de bord. Les notes et les calculs travaillent ensemble.</p>
         </div>
       </div>
     </section>
 
+<section class="section section-spino" id="spino"><div class="wrap"><div class="spino-story"><div><p class="eyebrow">Voici Spino</p><h2>L’assistant qui<br>travaille <span>chez vous.</span> <img class="spino-heading-logo" src="img/spino.png" width="60" height="60" alt=""/></h2><p class="section-lead">Pensé pour écrire et travailler en français, intégré à vos notes. Spino vous aide à clarifier une idée, comprendre un sujet ou retrouver le bon document.</p><div class="privacy-line"><span aria-hidden="true">●</span><p><strong>Votre ordinateur fait le travail.</strong> Avec le modèle local, vos notes ne sont pas envoyées à un service d’IA distant pour être analysées.</p></div><p class="small-print">Le mode local fonctionne hors connexion après installation du modèle. Les modèles cloud optionnels impliquent un envoi au fournisseur choisi, annoncé dans l’application.</p></div><div class="spino-examples"><article><span>01 · RETROUVER</span><h3>« Où sont mes notes sur ce projet ? »</h3><p>Recherchez dans les titres et le contenu de votre espace.</p></article><article><span>02 · ORGANISER</span><h3>« Ajoute cette note à mon projet INSEEC. »</h3><p>Rangez la note entière dans la base correspondante, sans perdre son contenu.</p></article><article><span>03 · COMPRENDRE</span><h3>Une réponse, ou un coup de pouce.</h3><p>Choisissez une réponse directe ou des indices et explications pour progresser par vous-même.</p></article></div></div></div></section>
+<section class="section section-sheet" id="spinsheet"><div class="wrap"><div class="sheet-intro"><div><p class="eyebrow">SpinSheet · Tableurs intelligents</p><h2>Des formules accessibles.<br><span>Des outils puissants.</span></h2></div><p class="section-lead">Du premier total au tableau de bord sur mesure, construisez vos outils à votre rythme. Des arguments expliqués pour débuter, des formules riches pour aller plus loin.</p></div>
+<div class="revenue-dashboard"><div class="dashboard-top"><span><i aria-hidden="true"></i> Atelier — pilotage commercial</span><span>Janv. — Juin 2026 <span aria-hidden="true">⌄</span></span></div><div class="smart-metrics"><article><span>CHIFFRE D’AFFAIRES</span><strong>108 700 <small>€</small></strong><p>Total des six derniers mois</p></article><article><span>DERNIER MOIS</span><strong>26 700 <small>€</small></strong><p class="positive">↗ +21,4 % par rapport à mai</p></article><article><span>OBJECTIF DE JUIN</span><strong>107 <small>%</small></strong><p>26 700 € sur un objectif de 25 000 €</p></article></div>
+<div class="dashboard-bottom"><div class="chart-panel"><div class="chart-title"><h3>Le chiffre d’affaires prend de la hauteur.</h3><span><i></i> CA mensuel</span></div><svg class="revenue-chart" viewBox="0 0 640 272" role="img" aria-labelledby="revenue-title revenue-desc"><title id="revenue-title">Chiffre d’affaires mensuel — exemple fictif</title><desc id="revenue-desc">Janvier 12 000 euros, février 15 000, mars 14 000, avril 19 000, mai 22 000 et juin 26 700 euros.</desc><defs><linearGradient id="revenue-fill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#9370e8" stop-opacity=".35"/><stop offset="1" stop-color="#9370e8" stop-opacity=".02"/></linearGradient></defs><g class="chart-grid"><path d="M52 35H620M52 95H620M52 155H620M52 215H620"/></g><g class="chart-axis"><text x="1" y="39">30 k€</text><text x="1" y="99">20 k€</text><text x="1" y="159">10 k€</text><text x="16" y="219">0</text><text x="65" y="253">Jan.</text><text x="170" y="253">Fév.</text><text x="275" y="253">Mars</text><text x="380" y="253">Avril</text><text x="485" y="253">Mai</text><text x="590" y="253">Juin</text></g><path fill="url(#revenue-fill)" d="M80 143L185 125L290 131L395 101L500 83L605 55V215H80Z"/><path class="chart-line" d="M80 143L185 125L290 131L395 101L500 83L605 55"/><g class="chart-points"><circle cx="80" cy="143" r="4"/><circle cx="185" cy="125" r="4"/><circle cx="290" cy="131" r="4"/><circle cx="395" cy="101" r="4"/><circle cx="500" cy="83" r="4"/><circle cx="605" cy="55" r="6"/></g><g class="chart-callout"><rect x="505" y="7" width="118" height="31" rx="8"/><text x="564" y="27" text-anchor="middle">26 700 €</text></g></svg></div><div class="sheet-data"><h3>Une source, plusieurs regards.</h3><table><caption>Ventes fictives — six mois</caption><thead><tr><th scope="col">Mois</th><th scope="col">CA</th></tr></thead><tbody><tr><th scope="row">Janvier</th><td>12 000 €</td></tr><tr><th scope="row">Février</th><td>15 000 €</td></tr><tr><th scope="row">Mars</th><td>14 000 €</td></tr><tr><th scope="row">Avril</th><td>19 000 €</td></tr><tr><th scope="row">Mai</th><td>22 000 €</td></tr><tr><th scope="row">Juin</th><td>26 700 €</td></tr></tbody></table></div></div><p class="illustration-label">Exemple illustratif avec données fictives · graphiques et SmartCells représentés pour expliquer leur usage</p></div>
+<div class="sheet-details"><article><span class="feature-number">01</span><h3>Les formules vous accompagnent.</h3><p>Découvrez à quoi sert chaque fonction et ce que chaque argument attend. Consultez l’aide et partez d’un exemple à adapter à vos cellules.</p></article><article><span class="feature-number">02</span><h3>Vos chiffres deviennent visuels.</h3><p>Transformez un tableau en graphique pour lire une tendance, comparer des résultats et partager une vue claire de votre activité.</p></article><article><span class="feature-number">03</span><h3>Gardez l’essentiel sous les yeux.</h3><p>Une SmartCell reprend une valeur de votre tableur. Réutilisez-la dans un widget ou le SmartDesk : elle suit sa source.</p></article></div>
+<div class="formula-demo"><div class="formula-demo-head"><h3>Une formule, le bon niveau d’aide.</h3><div role="group" aria-label="Niveau de l’exemple de formule"><button type="button" aria-pressed="true" data-formula-mode="debuter">Je débute</button><button type="button" aria-pressed="false" data-formula-mode="avancer">Je vais plus loin</button></div></div><div data-formula-panel="debuter"><code>=SOMME(<span>B2:B7</span>)</code><p><strong>B2:B7</strong> désigne les cellules à additionner, de B2 à B7. Dans notre exemple, le résultat est <strong>108 700 €</strong>.</p></div><div data-formula-panel="avancer" hidden><code>=SOMME.SI(<span>C2:C50</span>;&quot;Payé&quot;;<span>D2:D50</span>)</code><p>Additionnez les montants de <strong>D2:D50</strong> uniquement lorsque la cellule correspondante de <strong>C2:C50</strong> contient « Payé ». Une base simple pour suivre le chiffre d’affaires encaissé.</p></div></div>
+</div></section>
     <section class="section smartcell-section" id="smartcell" aria-labelledby="smartcell-title">
       <div class="wrap">
         <div class="smartcell-heading">
@@ -204,7 +212,7 @@
           </div>
         </div>
 
-        <p class="shots-note">Captures d'écran et illustrations réalisées avec des données d'exemple. L'application peut encore évoluer d'ici sa sortie. Sur mobile, faites glisser l'image pour voir le détail.</p>
+        <p class="shots-note">Captures d'écran réalisées avec des données d'exemple. L'application peut encore évoluer d'ici sa sortie. Sur mobile, faites glisser l'image pour voir le détail.</p>
       </div>
     </section>
 
@@ -213,9 +221,9 @@
         <h2>Ce qui change avec SpiNotes</h2>
         <div class="cards">
           <article class="card card-featured">
-            <span class="pill">Vos données protégées</span>
-            <h3>Une IA française, qui reste chez vous</h3>
-            <p>Le moteur d'IA de SpiNotes est français et fonctionne en local, directement sur votre appareil. Vos notes ne sont pas envoyées sur un serveur pour être analysées : elles restent à vous, et vos données restent protégées.</p>
+            <span class="pill">Vos données, votre choix</span>
+            <h3>Le local fait la différence.</h3>
+            <p>Gardez vos notes sur votre ordinateur et utilisez le modèle local de Spino pour les analyser sur cet appareil. Vous choisissez si vous activez ensuite des services de synchronisation ou un modèle cloud.</p>
           </article>
           <article class="card">
             <span class="pill">Sans abonnement</span>
@@ -225,45 +233,23 @@
           <article class="card">
             <span class="pill">À la carte</span>
             <h3>Synchronisation et collaboration sur mesure</h3>
-            <p>La synchronisation entre appareils et le travail à plusieurs font partie des évolutions prévues. Des formules facultatives sont en préparation, distinctes de l'achat de l'application en solo.</p>
+            <p>Une offre pour synchroniser vos notes entre appareils, une autre pour y ajouter le travail à plusieurs. Ces services sont prévus en complément de l’application locale ; leur disponibilité sera annoncée au lancement.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" id="offre">
-      <div class="wrap split">
-        <div>
-          <h2>Comment marche la pré-inscription</h2>
-          <div class="price-line">
-            <span class="price">6,99 €</span>
-            <p class="price-note">Achat unique, tarif réservé aux pré-inscrits
-              <small>Rien à payer aujourd'hui. Pré-inscription gratuite et sans engagement.</small>
-            </p>
-          </div>
-          <p style="color:var(--muted)">Le tarif de 6,99 € est réservé aux personnes pré-inscrites. Il ne sera plus proposé ensuite.</p>
-        </div>
-        <ol class="steps">
-          <li>
-            <strong>Vous vous pré-inscrivez</strong>
-            <p>Deux minutes, aucune carte bancaire demandée.</p>
-          </li>
-          <li>
-            <strong>Vous recevez un email de confirmation</strong>
-            <p>Il confirme que votre pré-inscription est bien enregistrée et que le tarif de 6,99 € vous est réservé.</p>
-          </li>
-          <li>
-            <strong>Le 4 janvier 2027, les précommandes ouvrent</strong>
-            <p>Vous recevez un email avec le lien pour précommander SpiNotes à 6,99 €. L'application est ensuite lancée au premier trimestre 2027.</p>
-          </li>
-        </ol>
-      </div>
-    </section>
+    <section class="section section-pricing" id="offre"><div class="wrap"><p class="eyebrow">Une app à vous. Des services au choix.</p><h2>Commencez en solo.<br><span>Ouvrez le champ des possibles.</span></h2><p class="section-lead">L’application locale s’achète une fois. La synchronisation et la collaboration sont des services optionnels, présentés ici en vue de leur lancement.</p><div class="billing-control" role="group" aria-label="Facturation des services optionnels"><button type="button" data-billing="monthly" aria-pressed="true">Mensuel</button><button type="button" data-billing="yearly" aria-pressed="false">Annuel <span>≈ 2 mois offerts</span></button></div>
+<div class="pricing-grid"><article class="plan plan-solo"><span class="plan-tag">L’APP SUR VOTRE ORDINATEUR</span><h3>SpiNotes Solo</h3><p>Votre espace personnel, en local.</p><div class="plan-price"><strong>15,99 €</strong><span>achat unique</span></div><div class="early-price"><span>OFFRE PRÉ-INSCRIPTION</span><strong class="price">6,99 € <small>au lieu de <s>15,99 €</s></small></strong></div><ul><li>Notes, projets et bibliothèque</li><li>SpinSheet, graphiques et SmartCells</li><li>Spino local en option à l’installation</li><li>Usage solo sur ordinateur</li></ul><a class="btn" href="#precommande" data-track="cta_offre">Réserver le tarif de 6,99 €</a><small>Pré-inscription gratuite. Rien à payer aujourd’hui.</small></article>
+<article class="plan"><span class="plan-tag">LE SERVICE MULTI-APPAREILS</span><h3>Synchronisation</h3><p>Vos notes vous suivent.</p><div class="plan-price" data-price-plan="sync" aria-live="polite"><strong data-price-value>4,99 €</strong><span data-price-period>/ mois</span></div><p class="plan-alternative" data-price-alternative>ou 49,99 € / an</p><ul><li>Synchronisation entre vos appareils</li><li>Retrouvez votre espace personnel</li><li>Service optionnel pour SpiNotes</li></ul><span class="availability">Prévu · disponibilité à annoncer</span><a class="btn btn-outline" href="#contact">Me renseigner</a></article>
+<article class="plan"><span class="plan-tag">LE SERVICE POUR AVANCER ENSEMBLE</span><h3>Synchronisation<br>+ collaboration</h3><p>Vos projets, à plusieurs.</p><div class="plan-price" data-price-plan="collab" aria-live="polite"><strong data-price-value>7,99 €</strong><span data-price-period>/ mois</span></div><p class="plan-alternative" data-price-alternative>ou 79,99 € / an</p><ul><li>Synchronisation multi-appareils</li><li>Collaboration dans vos espaces</li><li>Une formule pour le travail partagé</li></ul><span class="availability">Prévu · disponibilité à annoncer</span><a class="btn btn-outline" href="#contact">Me renseigner</a></article></div>
+<p class="pricing-note">Les tarifs annuels représentent une économie proche de deux mensualités par rapport à douze paiements mensuels. Les services de synchronisation et de collaboration ne sont pas commandables sur cette page. Le tarif de pré-inscription concerne uniquement l’achat de SpiNotes Solo.</p>
+<div class="signup-steps"><h3>Pré-inscrivez-vous aujourd’hui. Choisissez plus tard.</h3><ol class="steps"><li><strong>Réservez le tarif de 6,99 €</strong><p>Une inscription gratuite, sans carte bancaire et sans engagement.</p></li><li><strong>Recevez la confirmation par email</strong><p>Votre tarif Solo est réservé. Les précommandes sont prévues à partir du 4 janvier 2027.</p></li><li><strong>Décidez à la sortie</strong><p>Le lancement est prévu au premier trimestre 2027. Vous restez libre d’acheter ou non.</p></li></ol></div></div></section>
 
     <section class="section" id="precommande">
       <div class="wrap split">
         <div>
-          <h2>Se pré-inscrire à SpiNotes</h2>
+          <h2>Votre espace vous attend.</h2><p class="section-lead">Réservez SpiNotes Solo à 6,99 € au lieu de 15,99 €.</p>
           <p style="color:var(--muted)">Tous les champs sont obligatoires. Vos données servent uniquement à gérer votre pré-inscription et à vous prévenir de l'ouverture des précommandes puis du lancement.</p>
         </div>
 
@@ -342,14 +328,14 @@
         <div>
           <h2>Questions fréquentes</h2>
         </div>
-        <div class="faq">
+        <div class="faq"><details><summary>Mes notes sont-elles envoyées à une IA en ligne ?</summary><p>Avec le modèle local de Spino, l’analyse se fait sur votre ordinateur. Aucun contenu n’est envoyé à un service d’IA distant pour cette analyse. Choisir un modèle cloud optionnel implique en revanche un envoi au fournisseur, annoncé dans l’application. La synchronisation est un service distinct.</p></details><details><summary>Que signifie « pensé en français » pour Spino ?</summary><p>Spino est l’assistant de SpiNotes, avec une interface et des usages pensés pour travailler en français. Le modèle local actuellement distribué repose sur Qwen3, un modèle tiers : il ne faut pas confondre l’assistant SpiNotes avec l’origine du modèle utilisé.</p></details>
           <details>
             <summary>Est-ce que je paie quelque chose aujourd'hui ?</summary>
             <p>Non. La pré-inscription est gratuite et sans engagement. Vous payez 6,99 € une seule fois, seulement si vous décidez de précommander SpiNotes.</p>
           </details>
           <details>
             <summary>Faut-il un abonnement pour utiliser SpiNotes ?</summary>
-            <p>Non. L'application s'achète une seule fois, sans abonnement. Des options facultatives de synchronisation entre appareils et de collaboration sont en préparation. Leur contenu et leurs tarifs seront précisés avant leur disponibilité.</p>
+            <p>Non pour l’usage solo sur ordinateur : l’application coûte 15,99 € en achat unique, ou 6,99 € pour les pré-inscrits. Les services optionnels prévus sont la synchronisation à 4,99 €/mois ou 49,99 €/an, et la synchronisation avec collaboration à 7,99 €/mois ou 79,99 €/an. Leur disponibilité sera annoncée ; ils ne sont pas souscrits avec ce formulaire.</p>
           </details>
           <details>
             <summary>Le tarif de 6,99 € est-il garanti ?</summary>
@@ -362,14 +348,6 @@
           <details>
             <summary>Quand l'application sort-elle ?</summary>
             <p>Le lancement de SpiNotes est prévu au premier trimestre 2027. Les pré-inscrits sont prévenus par email dès que la date exacte est connue.</p>
-          </details>
-          <details>
-            <summary>À quoi sert une SmartCell ?</summary>
-            <p>Elle affiche une cellule de SpinSheet en dehors de son tableau, par exemple dans une note ou dans le SmartDesk. Sa valeur suit la source tant qu'elle est synchronisée. Vous pouvez la figer pour conserver un résultat de référence, puis réactiver le lien.</p>
-          </details>
-          <details>
-            <summary>SpinSheet remplace-t-il toutes les fonctions d'Excel ?</summary>
-            <p>SpinSheet est un tableur intégré à SpiNotes : formules de calcul, sommes, moyennes, arrondis, mise en forme, onglets, import/export Excel et graphiques en colonnes. Sa compatibilité évolue ; toutes les fonctions avancées, macros et objets des classeurs Excel ne sont pas pris en charge.</p>
           </details>
           <details>
             <summary>Je n'ai pas reçu l'email de confirmation.</summary>
