@@ -1,0 +1,1 @@
+(function(){'use strict';function ouvrir(){var hash=location.hash,id=hash==='#smartcell'?'widgets':hash.indexOf('#panel-')===0?hash.slice(7):null;if(!id)return;var tab=document.getElementById('tab-'+id);if(tab)tab.click()}window.addEventListener('hashchange',ouvrir);ouvrir()})();
